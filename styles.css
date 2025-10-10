@@ -16055,6 +16055,35 @@ body {
   color: var(--text);
   transition: background 0.5s, color 0.5s;
 }
+input.ng-invalid.ng-touched,
+input.ng-invalid.ng-dirty,
+textarea.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-dirty {
+  border-color: red !important;
+  color: red !important;
+}
+.validation-error {
+  font-style: italic;
+  color: red;
+}
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+textarea::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0.75rem;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 0.75rem;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+textarea {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) #f1f1f1;
+}
 
 /* src/fonts.css */
 @font-face {
