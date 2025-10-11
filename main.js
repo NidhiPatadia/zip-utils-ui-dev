@@ -37286,7 +37286,7 @@ var HomeComponent = class _HomeComponent {
   }, dependencies: [RouterModule, RouterLink], styles: ["\n\n.tools-container[_ngcontent-%COMP%] {\n  gap: 2rem;\n}\n.tool-card[_ngcontent-%COMP%] {\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  width: 100%;\n  max-width: 400px;\n  padding: 2rem;\n  text-align: center;\n  transition: transform 0.2s ease, box-shadow 0.2s ease;\n  cursor: pointer;\n}\n.tool-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-3px);\n  box-shadow: 0 10px 20px var(--shadow);\n}\n.tool-card[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  margin-top: 0.5rem;\n  font-size: 1.6rem;\n  font-weight: bold;\n  color: var(--primary);\n}\n.tool-card[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 0.95rem;\n  color: inherit;\n  margin: 1.3rem auto;\n}\n.tool-card[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.6rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n.tool-card[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\n.tool-icon[_ngcontent-%COMP%] {\n  font-size: 3rem;\n  color: var(--secondary);\n  margin-bottom: 1rem;\n}\n@media screen and (max-width: 768px) {\n  header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n    font-size: 2rem;\n  }\n  .tool-card[_ngcontent-%COMP%] {\n    max-width: 90%;\n  }\n}\n/*# sourceMappingURL=home.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HomeComponent, { className: "HomeComponent", filePath: "src\\app\\home\\home.component.ts", lineNumber: 13 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HomeComponent, { className: "HomeComponent", filePath: "src/app/home/home.component.ts", lineNumber: 13 });
 })();
 
 // src/app/page-not-found/page-not-found.component.ts
@@ -37310,7 +37310,7 @@ var PageNotFoundComponent = class _PageNotFoundComponent {
   } });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PageNotFoundComponent, { className: "PageNotFoundComponent", filePath: "src\\app\\page-not-found\\page-not-found.component.ts", lineNumber: 12 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(PageNotFoundComponent, { className: "PageNotFoundComponent", filePath: "src/app/page-not-found/page-not-found.component.ts", lineNumber: 12 });
 })();
 
 // node_modules/ts-invariant/lib/invariant.js
@@ -56923,10 +56923,30 @@ var ReactiveFormsModule = class _ReactiveFormsModule {
 })();
 
 // src/app/zip-text/zip-text.component.ts
+function ZipTextComponent_option_8_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "option", 9);
+    \u0275\u0275text(1);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const expiryTime_r1 = ctx.$implicit;
+    \u0275\u0275property("value", expiryTime_r1.value);
+    \u0275\u0275advance();
+    \u0275\u0275textInterpolate1(" ", expiryTime_r1.text, " ");
+  }
+}
 var ZipTextComponent = class _ZipTextComponent {
   headerService = inject(HeaderService);
   commonService = inject(CommonService);
   router = inject(Router);
+  expiryTimes = [
+    { text: "10 min", value: 10 },
+    { text: "30 min", value: 30 },
+    { text: "1 hour", value: 60 },
+    { text: "6 hours", value: 360 },
+    { text: "1 day", value: 1440 }
+  ];
   textInput = "";
   expiryInMinutes = 10;
   ngOnInit() {
@@ -56952,7 +56972,7 @@ var ZipTextComponent = class _ZipTextComponent {
   static \u0275fac = function ZipTextComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ZipTextComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextComponent, selectors: [["app-zip-text"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 20, vars: 3, consts: [[1, "main-content-text"], [1, "textarea-flex-wrapper"], ["rows", "8", "placeholder", "Paste your text here...", 3, "ngModelChange", "ngModel"], [1, "button-row"], [1, "dropdown-group"], ["for", "expiry-select"], ["id", "expiry-select", 3, "ngModelChange", "ngModel"], ["value", "10"], ["value", "30"], ["value", "60"], ["value", "360"], ["value", "1440"], [3, "click", "disabled"]], template: function ZipTextComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextComponent, selectors: [["app-zip-text"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 11, vars: 4, consts: [[1, "main-content-text"], [1, "textarea-flex-wrapper"], ["rows", "8", "placeholder", "Paste your text here...", 3, "ngModelChange", "ngModel"], [1, "button-row"], [1, "dropdown-group"], ["for", "expiry-select"], ["id", "expiry-select", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [3, "click", "disabled"], [3, "value"]], template: function ZipTextComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "textarea", 2);
       \u0275\u0275twoWayListener("ngModelChange", function ZipTextComponent_Template_textarea_ngModelChange_2_listener($event) {
@@ -56968,26 +56988,13 @@ var ZipTextComponent = class _ZipTextComponent {
         \u0275\u0275twoWayBindingSet(ctx.expiryInMinutes, $event) || (ctx.expiryInMinutes = $event);
         return $event;
       });
-      \u0275\u0275elementStart(8, "option", 7);
-      \u0275\u0275text(9, "10 min");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(10, "option", 8);
-      \u0275\u0275text(11, "30 min");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(12, "option", 9);
-      \u0275\u0275text(13, "1 hour");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(14, "option", 10);
-      \u0275\u0275text(15, "6 hours");
-      \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(16, "option", 11);
-      \u0275\u0275text(17, "1 day");
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(18, "button", 12);
-      \u0275\u0275listener("click", function ZipTextComponent_Template_button_click_18_listener() {
+      \u0275\u0275template(8, ZipTextComponent_option_8_Template, 2, 2, "option", 7);
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(9, "button", 8);
+      \u0275\u0275listener("click", function ZipTextComponent_Template_button_click_9_listener() {
         return ctx.generateLink();
       });
-      \u0275\u0275text(19, "Generate Link");
+      \u0275\u0275text(10, " Generate Link ");
       \u0275\u0275elementEnd()()()();
     }
     if (rf & 2) {
@@ -56995,13 +57002,15 @@ var ZipTextComponent = class _ZipTextComponent {
       \u0275\u0275twoWayProperty("ngModel", ctx.textInput);
       \u0275\u0275advance(5);
       \u0275\u0275twoWayProperty("ngModel", ctx.expiryInMinutes);
-      \u0275\u0275advance(11);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngForOf", ctx.expiryTimes);
+      \u0275\u0275advance();
       \u0275\u0275property("disabled", !ctx.textInput.trim());
     }
-  }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n}\n.main-content-text[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  color: var(--primary);\n  margin-bottom: 1rem;\n}\ntextarea[_ngcontent-%COMP%], \ninput[type=text][_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.75rem;\n  font-size: 1rem;\n  margin-bottom: 1rem;\n  background: white;\n  color: #333;\n}\nbutton[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\nbutton[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\nbutton[_ngcontent-%COMP%]:disabled {\n  background: #ccc;\n  color: #666;\n  cursor: not-allowed;\n  opacity: 0.7;\n  box-shadow: none;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.button-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  gap: 1rem;\n}\n.dropdown-group[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.dropdown-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: var(--primary);\n  white-space: nowrap;\n}\n.dropdown-group[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 0.6rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  border: 1px solid #ccc;\n  background: white;\n  color: #333;\n}\n/*# sourceMappingURL=zip-text.component.css.map */"] });
+  }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, CommonModule, NgForOf], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n}\n.main-content-text[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  color: var(--primary);\n  margin-bottom: 1rem;\n}\ntextarea[_ngcontent-%COMP%], \ninput[type=text][_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.75rem;\n  font-size: 1rem;\n  margin-bottom: 1rem;\n  background: white;\n  color: #333;\n}\nbutton[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\nbutton[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\nbutton[_ngcontent-%COMP%]:disabled {\n  background: #ccc;\n  color: #666;\n  cursor: not-allowed;\n  opacity: 0.7;\n  box-shadow: none;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.button-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  gap: 1rem;\n}\n.dropdown-group[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.dropdown-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: var(--primary);\n  white-space: nowrap;\n}\n.dropdown-group[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 0.5rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  border: 1px solid #ccc;\n  background: white;\n  color: #333;\n}\n/*# sourceMappingURL=zip-text.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextComponent, { className: "ZipTextComponent", filePath: "src\\app\\zip-text\\zip-text.component.ts", lineNumber: 15 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextComponent, { className: "ZipTextComponent", filePath: "src/app/zip-text/zip-text.component.ts", lineNumber: 16 });
 })();
 
 // src/app/zip-text/text-viewer/text-viewer.component.ts
@@ -57036,7 +57045,7 @@ function ZipTextViewerComponent_span_15_Template(rf, ctx) {
 function ZipTextViewerComponent_div_16_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div", 13);
-    \u0275\u0275text(1, " \u2705 Copied to clipboard! ");
+    \u0275\u0275text(1, "\u2705 Copied to clipboard!");
     \u0275\u0275elementEnd();
   }
 }
@@ -57148,7 +57157,7 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
   }, dependencies: [CommonModule, NgIf], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%]   textarea[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ddd;\n  border-radius: 0.5rem;\n  font-size: 1rem;\n  resize: vertical;\n  background: #fdfdfd;\n  color: #333;\n}\n.copy-text-btn[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0.6rem;\n  right: 0.6rem;\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 1rem;\n  color: #555;\n  transition: color 0.25s ease, transform 0.2s ease;\n}\n.copy-text-btn[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n.copy-text-btn.copied[_ngcontent-%COMP%] {\n  color: #28a745;\n  transform: scale(1.1);\n}\n.copy-url-box[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 0.6rem;\n  margin-top: 1rem;\n  padding: 0.6rem 1rem;\n  border: 1px solid #ddd;\n  border-radius: 0.5rem;\n  background: #fff;\n  font-size: 0.9rem;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);\n}\n.url-text[_ngcontent-%COMP%] {\n  max-width: 200px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  color: #333;\n}\n.copy-btn[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 1rem;\n  color: #555;\n  transition: color 0.25s ease, transform 0.2s ease;\n}\n.copy-btn[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n.copy-btn.copied[_ngcontent-%COMP%] {\n  color: #28a745;\n  transform: scale(1.1);\n}\n.snackbar[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 2rem;\n  left: 50%;\n  transform: translateX(-50%);\n  background: #28a745;\n  color: #fff;\n  font-size: 0.85rem;\n  padding: 0.4rem 0.8rem;\n  border-radius: 0.3rem;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);\n  opacity: 0;\n  animation: _ngcontent-%COMP%_fadeInOut 2s forwards;\n  z-index: 999;\n}\n@keyframes _ngcontent-%COMP%_fadeInOut {\n  0% {\n    opacity: 0;\n    transform: translate(-50%, 10px);\n  }\n  10% {\n    opacity: 1;\n    transform: translate(-50%, 0);\n  }\n  90% {\n    opacity: 1;\n    transform: translate(-50%, 0);\n  }\n  100% {\n    opacity: 0;\n    transform: translate(-50%, 10px);\n  }\n}\n.copy-url-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  margin-top: 1rem;\n}\n.copy-url-label[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: 0.9rem;\n  margin-top: 1rem;\n}\n/*# sourceMappingURL=text-viewer.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextViewerComponent, { className: "ZipTextViewerComponent", filePath: "src\\app\\zip-text\\text-viewer\\text-viewer.component.ts", lineNumber: 15 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextViewerComponent, { className: "ZipTextViewerComponent", filePath: "src/app/zip-text/text-viewer/text-viewer.component.ts", lineNumber: 15 });
 })();
 
 // src/app/zip-url/zip-url.component.ts
@@ -57232,7 +57241,7 @@ var ZipUrlComponent = class _ZipUrlComponent {
   }, dependencies: [CommonModule, NgIf, ReactiveFormsModule, \u0275NgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName], styles: ["\n\n.main-content-url[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 3rem 1rem;\n}\n.tool-box[_ngcontent-%COMP%] {\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  max-width: 800px;\n  width: 100%;\n  padding: 2rem;\n  text-align: center;\n}\n.tool-box[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  margin-bottom: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.5rem;\n  font-size: 1rem;\n  background: var(--bg);\n  color: var(--text);\n}\n.tool-box[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n.tool-box[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\n/*# sourceMappingURL=zip-url.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipUrlComponent, { className: "ZipUrlComponent", filePath: "src\\app\\zip-url\\zip-url.component.ts", lineNumber: 19 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipUrlComponent, { className: "ZipUrlComponent", filePath: "src/app/zip-url/zip-url.component.ts", lineNumber: 19 });
 })();
 
 // src/app/zip-qr/zip-qr.component.ts
@@ -57256,7 +57265,7 @@ var ZipQrComponent = class _ZipQrComponent {
   }, styles: ["\n\n.main-content-qr[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n}\n/*# sourceMappingURL=zip-qr.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipQrComponent, { className: "ZipQrComponent", filePath: "src\\app\\zip-qr\\zip-qr.component.ts", lineNumber: 12 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipQrComponent, { className: "ZipQrComponent", filePath: "src/app/zip-qr/zip-qr.component.ts", lineNumber: 12 });
 })();
 
 // src/app/app.routes.ts
@@ -57863,7 +57872,7 @@ var FooterComponent = class _FooterComponent {
   }, dependencies: [RouterModule, RouterLink], styles: ['\n\n.footer-box[_ngcontent-%COMP%] {\n  background-color: #222;\n}\n.footer-head[_ngcontent-%COMP%] {\n  border-bottom: 1px solid #737373;\n}\n.footer-title[_ngcontent-%COMP%] {\n  width: 150px;\n  max-width: 100%;\n  font-size: 1.8rem;\n  font-weight: bold;\n  color: white;\n}\n.social-links[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap-reverse;\n  align-items: center;\n  color: white;\n}\n.follow-us-text[_ngcontent-%COMP%] {\n  display: inline-block;\n  font-size: 13px;\n  letter-spacing: 0.22px;\n}\n.social-icon-container[_ngcontent-%COMP%] {\n  display: inline-block;\n  padding-left: 10px;\n}\n.social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n  display: inline-block;\n  list-style: none;\n  margin: 0 5px;\n  font-size: 25px;\n  cursor: pointer;\n}\n.social-icon-container[_ngcontent-%COMP%]   .fb[_ngcontent-%COMP%]:hover {\n  color: #4267b2;\n}\n.social-icon-container[_ngcontent-%COMP%]   .twitter[_ngcontent-%COMP%]:hover {\n  color: #1da1f2;\n}\n.social-icon-container[_ngcontent-%COMP%]   .insta[_ngcontent-%COMP%]:hover {\n  color: #bc2a8d;\n}\n.social-icon-container[_ngcontent-%COMP%]   .youtube[_ngcontent-%COMP%]:hover {\n  color: #ff0000;\n}\n.copyright-text[_ngcontent-%COMP%] {\n  font-family: "Roboto Regular", sans-serif;\n  font-size: 12px;\n  letter-spacing: 0.22px;\n  color: white;\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1.5rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 11px;\n    letter-spacing: 0.2px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 8px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 3px;\n    font-size: 22px;\n  }\n}\n@media (min-width: 576px) and (max-width: 767px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1.2rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 11px;\n    letter-spacing: 0.2px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 8px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 3px;\n    font-size: 22px;\n  }\n}\n@media (max-width: 575px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 9px;\n    letter-spacing: 0.1px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 5px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 2px;\n    font-size: 16px;\n  }\n}\n/*# sourceMappingURL=footer.component.css.map */'] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FooterComponent, { className: "FooterComponent", filePath: "src\\app\\footer\\footer.component.ts", lineNumber: 12 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FooterComponent, { className: "FooterComponent", filePath: "src/app/footer/footer.component.ts", lineNumber: 12 });
 })();
 
 // src/app/header/header.component.ts
@@ -57956,7 +57965,7 @@ var HeaderComponent = class _HeaderComponent {
   }, dependencies: [RouterModule, RouterLink], styles: ["\n\nheader[_ngcontent-%COMP%] {\n  background: var(--banner-gradient);\n  text-align: center;\n  color: white;\n  box-shadow: 0 4px 12px var(--shadow);\n  position: relative;\n}\nheader[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 2.5rem;\n  font-weight: bold;\n}\nheader[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0.5rem auto 1rem auto;\n  font-size: 1.1rem;\n}\n.toggle-button[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 1rem;\n}\n.theme-toggle[_ngcontent-%COMP%] {\n  right: 1rem;\n}\n.home-redirect[_ngcontent-%COMP%] {\n  left: 1rem;\n}\n.theme-toggle[_ngcontent-%COMP%]   button[_ngcontent-%COMP%], \n.home-redirect[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  background: var(--card-bg);\n  border: none;\n  border-radius: 1.5rem;\n  padding: 0.3rem 0.75rem;\n  font-size: 0.75rem;\n  font-weight: 600;\n  cursor: pointer;\n  color: var(--primary);\n  box-shadow: 0 2px 5px var(--shadow);\n  transition: background 0.3s, color 0.3s;\n}\n@media screen and (max-width: 768px) {\n  header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n    font-size: 2rem;\n  }\n  .toggle-button[_ngcontent-%COMP%] {\n    top: 0.5rem;\n  }\n  .theme-toggle[_ngcontent-%COMP%] {\n    right: 0.5rem;\n  }\n  .home-redirect[_ngcontent-%COMP%] {\n    left: 0.5rem;\n  }\n}\n/*# sourceMappingURL=header.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src\\app\\header\\header.component.ts", lineNumber: 21 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src/app/header/header.component.ts", lineNumber: 21 });
 })();
 
 // src/app/app.component.ts
@@ -57980,7 +57989,7 @@ var AppComponent = class _AppComponent {
   }, dependencies: [RouterOutlet, HeaderComponent, FooterComponent], styles: ["\n\n.custom-container[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.header-container[_ngcontent-%COMP%] {\n  border-bottom: 1px solid #ddd;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.footer-container[_ngcontent-%COMP%] {\n  border-top: 1px solid #737373;\n}\n/*# sourceMappingURL=app.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src\\app\\app.component.ts", lineNumber: 13 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src/app/app.component.ts", lineNumber: 13 });
 })();
 
 // src/main.ts
