@@ -56930,10 +56930,10 @@ function ZipTextComponent_option_8_Template(rf, ctx) {
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const expiry_r1 = ctx.$implicit;
-    \u0275\u0275property("value", expiry_r1.value);
+    const expiryTime_r1 = ctx.$implicit;
+    \u0275\u0275property("value", expiryTime_r1.value);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", expiry_r1.text, " ");
+    \u0275\u0275textInterpolate1(" ", expiryTime_r1.text, " ");
   }
 }
 var ZipTextComponent = class _ZipTextComponent {
