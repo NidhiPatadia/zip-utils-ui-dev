@@ -57073,6 +57073,7 @@ function ZipTextViewerComponent_div_19_Template(rf, ctx) {
 var ZipTextViewerComponent = class _ZipTextViewerComponent {
   route = inject(ActivatedRoute);
   platformId = inject(PLATFORM_ID);
+  headerService = inject(HeaderService);
   commonService = inject(CommonService);
   router = inject(Router);
   id = null;
@@ -57084,6 +57085,10 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get("id");
     const tempText = this.commonService.getTempText();
+    this.headerService.setTitleAndDescription({
+      pageTitle: PAGE_TITLE.ZIP_TEXT,
+      pageDescription: PAGE_DESCRIPTION.ZIP_TEXT
+    });
     if (tempText) {
       this.text = tempText;
       this.commonService.clearTempText();
@@ -57188,7 +57193,7 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
   }, dependencies: [CommonModule, NgIf], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%]   textarea[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ddd;\n  border-radius: 0.5rem;\n  font-size: 1rem;\n  resize: vertical;\n  background: #fdfdfd;\n  color: #333;\n}\n.copy-text-btn[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0.6rem;\n  right: 0.6rem;\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 1rem;\n  color: #555;\n  transition: color 0.25s ease, transform 0.2s ease;\n}\n.copy-text-btn[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n.copy-text-btn.copied[_ngcontent-%COMP%] {\n  color: #28a745;\n  transform: scale(1.1);\n}\n.copy-url-box[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 0.6rem;\n  margin-top: 1rem;\n  padding: 0.6rem 1rem;\n  border: 1px solid #ddd;\n  border-radius: 0.5rem;\n  background: #fff;\n  font-size: 0.9rem;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);\n}\n.url-text[_ngcontent-%COMP%] {\n  max-width: 200px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  color: #333;\n}\n.copy-btn[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 1rem;\n  color: #555;\n  transition: color 0.25s ease, transform 0.2s ease;\n}\n.copy-btn[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n.copy-btn.copied[_ngcontent-%COMP%] {\n  color: #28a745;\n  transform: scale(1.1);\n}\n.snackbar[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 2rem;\n  left: 50%;\n  transform: translateX(-50%);\n  background: #28a745;\n  color: #fff;\n  font-size: 0.85rem;\n  padding: 0.4rem 0.8rem;\n  border-radius: 0.3rem;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);\n  opacity: 0;\n  animation: _ngcontent-%COMP%_fadeInOut 2s forwards;\n  z-index: 999;\n}\n@keyframes _ngcontent-%COMP%_fadeInOut {\n  0% {\n    opacity: 0;\n    transform: translate(-50%, 10px);\n  }\n  10% {\n    opacity: 1;\n    transform: translate(-50%, 0);\n  }\n  90% {\n    opacity: 1;\n    transform: translate(-50%, 0);\n  }\n  100% {\n    opacity: 0;\n    transform: translate(-50%, 10px);\n  }\n}\n.copy-url-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  margin-top: 1rem;\n}\n.copy-url-label[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: 0.9rem;\n  margin-top: 1rem;\n}\n.header-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  margin-bottom: 12px;\n}\n.back-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  margin-bottom: 16px;\n  background: transparent;\n  border: none;\n  color: var(--primary);\n  font-size: 14px;\n  cursor: pointer;\n  transition: opacity 0.2s ease, transform 0.1s ease;\n}\n.back-btn[_ngcontent-%COMP%]:hover {\n  opacity: 0.7;\n  transform: translateX(-2px);\n}\n/*# sourceMappingURL=text-viewer.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextViewerComponent, { className: "ZipTextViewerComponent", filePath: "src/app/zip-text/text-viewer/text-viewer.component.ts", lineNumber: 15 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextViewerComponent, { className: "ZipTextViewerComponent", filePath: "src/app/zip-text/text-viewer/text-viewer.component.ts", lineNumber: 16 });
 })();
 
 // src/app/zip-url/zip-url.component.ts
