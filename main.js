@@ -57035,37 +57035,37 @@ var ZipTextComponent = class _ZipTextComponent {
 })();
 
 // src/app/zip-text/text-viewer/text-viewer.component.ts
-function ZipTextViewerComponent_span_5_Template(rf, ctx) {
+function ZipTextViewerComponent_span_8_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
-    \u0275\u0275element(1, "i", 11);
+    \u0275\u0275element(1, "i", 13);
     \u0275\u0275elementEnd();
   }
 }
-function ZipTextViewerComponent_span_6_Template(rf, ctx) {
+function ZipTextViewerComponent_span_9_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
-    \u0275\u0275element(1, "i", 12);
+    \u0275\u0275element(1, "i", 14);
     \u0275\u0275elementEnd();
   }
 }
-function ZipTextViewerComponent_span_14_Template(rf, ctx) {
+function ZipTextViewerComponent_span_17_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
-    \u0275\u0275element(1, "i", 11);
+    \u0275\u0275element(1, "i", 13);
     \u0275\u0275elementEnd();
   }
 }
-function ZipTextViewerComponent_span_15_Template(rf, ctx) {
+function ZipTextViewerComponent_span_18_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "span");
-    \u0275\u0275element(1, "i", 12);
+    \u0275\u0275element(1, "i", 14);
     \u0275\u0275elementEnd();
   }
 }
-function ZipTextViewerComponent_div_16_Template(rf, ctx) {
+function ZipTextViewerComponent_div_19_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 13);
+    \u0275\u0275elementStart(0, "div", 15);
     \u0275\u0275text(1, "\u2705 Copied to clipboard!");
     \u0275\u0275elementEnd();
   }
@@ -57126,37 +57126,47 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
       }, 2e3);
     }
   }
+  goBack() {
+    this.router.navigate(["/text"]);
+  }
   static \u0275fac = function ZipTextViewerComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ZipTextViewerComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextViewerComponent, selectors: [["app-text-viewer"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 17, vars: 11, consts: [[1, "main-content-text"], [1, "textarea-flex-wrapper"], ["rows", "8", "readonly", ""], ["title", "Copy text", 1, "copy-text-btn", 3, "click"], [4, "ngIf"], [1, "copy-url-wrapper"], [1, "copy-url-label"], [1, "copy-url-box"], [1, "url-text"], ["title", "Copy link", 1, "copy-btn", 3, "click"], ["class", "snackbar", 4, "ngIf"], [1, "fa-solid", "fa", "fa-copy"], [1, "fa-solid", "fa", "fa-clipboard-check"], [1, "snackbar"]], template: function ZipTextViewerComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextViewerComponent, selectors: [["app-text-viewer"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 20, vars: 11, consts: [[1, "main-content-text"], ["title", "Go back", 1, "back-btn", 3, "click"], [1, "fa-solid", "fa-arrow-left", "fa"], [1, "textarea-flex-wrapper"], ["rows", "8", "readonly", ""], ["title", "Copy text", 1, "copy-text-btn", 3, "click"], [4, "ngIf"], [1, "copy-url-wrapper"], [1, "copy-url-label"], [1, "copy-url-box"], [1, "url-text"], ["title", "Copy link", 1, "copy-btn", 3, "click"], ["class", "snackbar", 4, "ngIf"], [1, "fa-solid", "fa", "fa-copy"], [1, "fa-solid", "fa", "fa-clipboard-check"], [1, "snackbar"]], template: function ZipTextViewerComponent_Template(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "textarea", 2);
-      \u0275\u0275text(3);
+      \u0275\u0275elementStart(0, "div", 0)(1, "button", 1);
+      \u0275\u0275listener("click", function ZipTextViewerComponent_Template_button_click_1_listener() {
+        return ctx.goBack();
+      });
+      \u0275\u0275element(2, "i", 2);
+      \u0275\u0275text(3, " Back ");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(4, "button", 3);
-      \u0275\u0275listener("click", function ZipTextViewerComponent_Template_button_click_4_listener() {
+      \u0275\u0275elementStart(4, "div", 3)(5, "textarea", 4);
+      \u0275\u0275text(6);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(7, "button", 5);
+      \u0275\u0275listener("click", function ZipTextViewerComponent_Template_button_click_7_listener() {
         return ctx.copyText();
       });
-      \u0275\u0275template(5, ZipTextViewerComponent_span_5_Template, 2, 0, "span", 4)(6, ZipTextViewerComponent_span_6_Template, 2, 0, "span", 4);
+      \u0275\u0275template(8, ZipTextViewerComponent_span_8_Template, 2, 0, "span", 6)(9, ZipTextViewerComponent_span_9_Template, 2, 0, "span", 6);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(7, "div", 5)(8, "span", 6);
-      \u0275\u0275text(9, "Copy URL:");
-      \u0275\u0275elementEnd();
       \u0275\u0275elementStart(10, "div", 7)(11, "span", 8);
-      \u0275\u0275text(12);
+      \u0275\u0275text(12, "Copy URL:");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(13, "button", 9);
-      \u0275\u0275listener("click", function ZipTextViewerComponent_Template_button_click_13_listener() {
+      \u0275\u0275elementStart(13, "div", 9)(14, "span", 10);
+      \u0275\u0275text(15);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(16, "button", 11);
+      \u0275\u0275listener("click", function ZipTextViewerComponent_Template_button_click_16_listener() {
         return ctx.copyUrl();
       });
-      \u0275\u0275template(14, ZipTextViewerComponent_span_14_Template, 2, 0, "span", 4)(15, ZipTextViewerComponent_span_15_Template, 2, 0, "span", 4);
+      \u0275\u0275template(17, ZipTextViewerComponent_span_17_Template, 2, 0, "span", 6)(18, ZipTextViewerComponent_span_18_Template, 2, 0, "span", 6);
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(16, ZipTextViewerComponent_div_16_Template, 2, 0, "div", 10);
+      \u0275\u0275template(19, ZipTextViewerComponent_div_19_Template, 2, 0, "div", 12);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
-      \u0275\u0275advance(3);
+      \u0275\u0275advance(6);
       \u0275\u0275textInterpolate(ctx.text);
       \u0275\u0275advance();
       \u0275\u0275classProp("copied", ctx.textCopied);
@@ -57175,7 +57185,7 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.showSnackbar);
     }
-  }, dependencies: [CommonModule, NgIf], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%]   textarea[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ddd;\n  border-radius: 0.5rem;\n  font-size: 1rem;\n  resize: vertical;\n  background: #fdfdfd;\n  color: #333;\n}\n.copy-text-btn[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0.6rem;\n  right: 0.6rem;\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 1rem;\n  color: #555;\n  transition: color 0.25s ease, transform 0.2s ease;\n}\n.copy-text-btn[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n.copy-text-btn.copied[_ngcontent-%COMP%] {\n  color: #28a745;\n  transform: scale(1.1);\n}\n.copy-url-box[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 0.6rem;\n  margin-top: 1rem;\n  padding: 0.6rem 1rem;\n  border: 1px solid #ddd;\n  border-radius: 0.5rem;\n  background: #fff;\n  font-size: 0.9rem;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);\n}\n.url-text[_ngcontent-%COMP%] {\n  max-width: 200px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  color: #333;\n}\n.copy-btn[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 1rem;\n  color: #555;\n  transition: color 0.25s ease, transform 0.2s ease;\n}\n.copy-btn[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n.copy-btn.copied[_ngcontent-%COMP%] {\n  color: #28a745;\n  transform: scale(1.1);\n}\n.snackbar[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 2rem;\n  left: 50%;\n  transform: translateX(-50%);\n  background: #28a745;\n  color: #fff;\n  font-size: 0.85rem;\n  padding: 0.4rem 0.8rem;\n  border-radius: 0.3rem;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);\n  opacity: 0;\n  animation: _ngcontent-%COMP%_fadeInOut 2s forwards;\n  z-index: 999;\n}\n@keyframes _ngcontent-%COMP%_fadeInOut {\n  0% {\n    opacity: 0;\n    transform: translate(-50%, 10px);\n  }\n  10% {\n    opacity: 1;\n    transform: translate(-50%, 0);\n  }\n  90% {\n    opacity: 1;\n    transform: translate(-50%, 0);\n  }\n  100% {\n    opacity: 0;\n    transform: translate(-50%, 10px);\n  }\n}\n.copy-url-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  margin-top: 1rem;\n}\n.copy-url-label[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: 0.9rem;\n  margin-top: 1rem;\n}\n/*# sourceMappingURL=text-viewer.component.css.map */"] });
+  }, dependencies: [CommonModule, NgIf], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%]   textarea[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ddd;\n  border-radius: 0.5rem;\n  font-size: 1rem;\n  resize: vertical;\n  background: #fdfdfd;\n  color: #333;\n}\n.copy-text-btn[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0.6rem;\n  right: 0.6rem;\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 1rem;\n  color: #555;\n  transition: color 0.25s ease, transform 0.2s ease;\n}\n.copy-text-btn[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n.copy-text-btn.copied[_ngcontent-%COMP%] {\n  color: #28a745;\n  transform: scale(1.1);\n}\n.copy-url-box[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 0.6rem;\n  margin-top: 1rem;\n  padding: 0.6rem 1rem;\n  border: 1px solid #ddd;\n  border-radius: 0.5rem;\n  background: #fff;\n  font-size: 0.9rem;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);\n}\n.url-text[_ngcontent-%COMP%] {\n  max-width: 200px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  color: #333;\n}\n.copy-btn[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 1rem;\n  color: #555;\n  transition: color 0.25s ease, transform 0.2s ease;\n}\n.copy-btn[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n.copy-btn.copied[_ngcontent-%COMP%] {\n  color: #28a745;\n  transform: scale(1.1);\n}\n.snackbar[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 2rem;\n  left: 50%;\n  transform: translateX(-50%);\n  background: #28a745;\n  color: #fff;\n  font-size: 0.85rem;\n  padding: 0.4rem 0.8rem;\n  border-radius: 0.3rem;\n  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);\n  opacity: 0;\n  animation: _ngcontent-%COMP%_fadeInOut 2s forwards;\n  z-index: 999;\n}\n@keyframes _ngcontent-%COMP%_fadeInOut {\n  0% {\n    opacity: 0;\n    transform: translate(-50%, 10px);\n  }\n  10% {\n    opacity: 1;\n    transform: translate(-50%, 0);\n  }\n  90% {\n    opacity: 1;\n    transform: translate(-50%, 0);\n  }\n  100% {\n    opacity: 0;\n    transform: translate(-50%, 10px);\n  }\n}\n.copy-url-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0.5rem;\n  margin-top: 1rem;\n}\n.copy-url-label[_ngcontent-%COMP%] {\n  font-weight: 600;\n  font-size: 0.9rem;\n  margin-top: 1rem;\n}\n.header-actions[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  margin-bottom: 12px;\n}\n.back-btn[_ngcontent-%COMP%] {\n  display: inline-flex;\n  align-items: center;\n  gap: 6px;\n  margin-bottom: 16px;\n  background: transparent;\n  border: none;\n  color: var(--primary);\n  font-size: 14px;\n  cursor: pointer;\n  transition: opacity 0.2s ease, transform 0.1s ease;\n}\n.back-btn[_ngcontent-%COMP%]:hover {\n  opacity: 0.7;\n  transform: translateX(-2px);\n}\n/*# sourceMappingURL=text-viewer.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextViewerComponent, { className: "ZipTextViewerComponent", filePath: "src/app/zip-text/text-viewer/text-viewer.component.ts", lineNumber: 15 });
