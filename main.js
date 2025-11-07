@@ -37186,7 +37186,7 @@ var PAGE_DESCRIPTION;
   PAGE_DESCRIPTION2["ZIP_TEXT"] = "Paste and share text instantly using a unique link.";
   PAGE_DESCRIPTION2["ZIP_URL"] = "Shorten long URLs into simple, shareable links.";
   PAGE_DESCRIPTION2["ZIP_QR"] = "Generate QR codes for links, text, or any data in one click.";
-  PAGE_DESCRIPTION2["NOT_FOUND"] = "The page you are looking for does not exist or may have been moved.";
+  PAGE_DESCRIPTION2["NOT_FOUND"] = "The page you are looking for does not exist or may have been removed.";
 })(PAGE_DESCRIPTION || (PAGE_DESCRIPTION = {}));
 
 // src/app/services/header/header.service.ts
@@ -37301,12 +37301,7 @@ var PageNotFoundComponent = class _PageNotFoundComponent {
   static \u0275fac = function PageNotFoundComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _PageNotFoundComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _PageNotFoundComponent, selectors: [["app-page-not-found"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 2, vars: 0, template: function PageNotFoundComponent_Template(rf, ctx) {
-    if (rf & 1) {
-      \u0275\u0275elementStart(0, "p");
-      \u0275\u0275text(1, "page-not-found works!");
-      \u0275\u0275elementEnd();
-    }
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _PageNotFoundComponent, selectors: [["app-page-not-found"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 0, vars: 0, template: function PageNotFoundComponent_Template(rf, ctx) {
   } });
 };
 (() => {
@@ -57322,7 +57317,7 @@ function ZipUrlComponent_div_7_Template(rf, ctx) {
     \u0275\u0275elementStart(0, "div", 17);
     \u0275\u0275element(1, "div", 18);
     \u0275\u0275elementStart(2, "p");
-    \u0275\u0275text(3, "Generating link...");
+    \u0275\u0275text(3, "Processing...");
     \u0275\u0275elementEnd()();
   }
 }
@@ -57365,7 +57360,9 @@ var ZipUrlComponent = class _ZipUrlComponent {
   }
   generateShortUrl(url) {
     this.loading = true;
-    this.commonService.generateZipShortUrl(url).pipe(finalize(() => this.loading = false)).subscribe({
+    this.commonService.generateZipShortUrl(url).pipe(finalize(() => setTimeout(() => {
+      this.loading = false;
+    }, 300))).subscribe({
       next: (response) => {
         const shortUrl = response?.data?.generateUrl;
         if (!shortUrl) {
@@ -58057,25 +58054,33 @@ var FooterComponent = class _FooterComponent {
   static \u0275fac = function FooterComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FooterComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FooterComponent, selectors: [["app-footer"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 15, vars: 2, consts: [[1, "footer-box"], [1, "container", "py-3"], [1, "row"], [1, "col-12"], [1, "footer-head"], [1, "row", "mb-2"], [1, "col-3", "col-sm-4", "col-lg-3"], [1, "footer-logo-container"], ["routerLink", "/", 1, "d-inline-block", "h-100", "mw-100", "text-decoration-none"], [1, "footer-title"], [1, "col-4", "col-sm-4", "col-lg-6"], [1, "visitors-count"], [1, "copyright-text", "mt-3"]], template: function FooterComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FooterComponent, selectors: [["app-footer"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 24, vars: 2, consts: [[1, "footer-box"], [1, "container", "py-3"], [1, "row"], [1, "col-12"], [1, "footer-head"], [1, "row", "mb-2"], [1, "col-3", "col-sm-4", "col-lg-3"], [1, "footer-logo-container"], ["routerLink", "/", 1, "d-inline-block", "h-100", "mw-100", "text-decoration-none"], [1, "footer-title"], [1, "col-9", "col-sm-8", "col-lg-9"], [1, "footer-links", "text-end"], [1, "legal-policy"], ["for", "legal-policy"], ["id", "legal-policy", "href", "https://drive.google.com/file/d/1Ed_Can1LipXpwhIEqy_igWL9qxn28tMQ/view", "target", "_blank", 1, "text-decoration-none", "footer-link"], [1, "contact-us"], ["for", "contact-us"], ["id", "contact-us", "href", "mailto:ziputils@proton.me", 1, "text-decoration-none", "footer-link"], [1, "copyright-text", "mt-3"]], template: function FooterComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "div", 4)(5, "div", 5)(6, "div", 6)(7, "div", 7)(8, "a", 8)(9, "div", 9);
       \u0275\u0275text(10);
       \u0275\u0275elementEnd()()()();
-      \u0275\u0275elementStart(11, "div", 10);
-      \u0275\u0275element(12, "div", 11);
-      \u0275\u0275elementEnd()()();
-      \u0275\u0275elementStart(13, "div", 12);
-      \u0275\u0275text(14);
+      \u0275\u0275elementStart(11, "div", 10)(12, "div", 11)(13, "div", 12);
+      \u0275\u0275element(14, "label", 13);
+      \u0275\u0275elementStart(15, "a", 14);
+      \u0275\u0275text(16, " Legal & Policy Documents ");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(17, "div", 15)(18, "label", 16);
+      \u0275\u0275text(19, "Contact Us:");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(20, "a", 17);
+      \u0275\u0275text(21, " ziputils@proton.me ");
+      \u0275\u0275elementEnd()()()()()();
+      \u0275\u0275elementStart(22, "div", 18);
+      \u0275\u0275text(23);
       \u0275\u0275elementEnd()()()()();
     }
     if (rf & 2) {
       \u0275\u0275advance(10);
       \u0275\u0275textInterpolate(ctx.TITLE.ZIP_UTILS);
-      \u0275\u0275advance(4);
+      \u0275\u0275advance(13);
       \u0275\u0275textInterpolate1(" \xA9 ", ctx.currentYear, " Zip-Utils - All rights reserved | A free utility platform for text, links, and QR tools ");
     }
-  }, dependencies: [RouterModule, RouterLink], styles: ['\n\n.footer-box[_ngcontent-%COMP%] {\n  background-color: #222;\n}\n.footer-head[_ngcontent-%COMP%] {\n  border-bottom: 1px solid #737373;\n}\n.footer-title[_ngcontent-%COMP%] {\n  width: 150px;\n  max-width: 100%;\n  font-size: 1.8rem;\n  font-weight: bold;\n  color: white;\n}\n.social-links[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap-reverse;\n  align-items: center;\n  color: white;\n}\n.follow-us-text[_ngcontent-%COMP%] {\n  display: inline-block;\n  font-size: 13px;\n  letter-spacing: 0.22px;\n}\n.social-icon-container[_ngcontent-%COMP%] {\n  display: inline-block;\n  padding-left: 10px;\n}\n.social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n  display: inline-block;\n  list-style: none;\n  margin: 0 5px;\n  font-size: 25px;\n  cursor: pointer;\n}\n.social-icon-container[_ngcontent-%COMP%]   .fb[_ngcontent-%COMP%]:hover {\n  color: #4267b2;\n}\n.social-icon-container[_ngcontent-%COMP%]   .twitter[_ngcontent-%COMP%]:hover {\n  color: #1da1f2;\n}\n.social-icon-container[_ngcontent-%COMP%]   .insta[_ngcontent-%COMP%]:hover {\n  color: #bc2a8d;\n}\n.social-icon-container[_ngcontent-%COMP%]   .youtube[_ngcontent-%COMP%]:hover {\n  color: #ff0000;\n}\n.copyright-text[_ngcontent-%COMP%] {\n  font-family: "Roboto Regular", sans-serif;\n  font-size: 12px;\n  letter-spacing: 0.22px;\n  color: white;\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1.5rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 11px;\n    letter-spacing: 0.2px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 8px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 3px;\n    font-size: 22px;\n  }\n}\n@media (min-width: 576px) and (max-width: 767px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1.2rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 11px;\n    letter-spacing: 0.2px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 8px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 3px;\n    font-size: 22px;\n  }\n}\n@media (max-width: 575px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 9px;\n    letter-spacing: 0.1px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 5px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 2px;\n    font-size: 16px;\n  }\n}\n/*# sourceMappingURL=footer.component.css.map */'] });
+  }, dependencies: [RouterModule, RouterLink], styles: ['\n\n.footer-box[_ngcontent-%COMP%] {\n  background-color: #222;\n}\n.footer-head[_ngcontent-%COMP%] {\n  border-bottom: 1px solid #737373;\n}\n.footer-title[_ngcontent-%COMP%] {\n  width: 150px;\n  max-width: 100%;\n  font-size: 1.8rem;\n  font-weight: bold;\n  color: white;\n}\n.social-links[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap-reverse;\n  align-items: center;\n  color: white;\n}\n.follow-us-text[_ngcontent-%COMP%] {\n  display: inline-block;\n  font-size: 13px;\n  letter-spacing: 0.22px;\n}\n.social-icon-container[_ngcontent-%COMP%] {\n  display: inline-block;\n  padding-left: 10px;\n}\n.social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n  display: inline-block;\n  list-style: none;\n  margin: 0 5px;\n  font-size: 25px;\n  cursor: pointer;\n}\n.social-icon-container[_ngcontent-%COMP%]   .fb[_ngcontent-%COMP%]:hover {\n  color: #4267b2;\n}\n.social-icon-container[_ngcontent-%COMP%]   .twitter[_ngcontent-%COMP%]:hover {\n  color: #1da1f2;\n}\n.social-icon-container[_ngcontent-%COMP%]   .insta[_ngcontent-%COMP%]:hover {\n  color: #bc2a8d;\n}\n.social-icon-container[_ngcontent-%COMP%]   .youtube[_ngcontent-%COMP%]:hover {\n  color: #ff0000;\n}\n.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%], \n.footer-links[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-family: "Roboto Regular", sans-serif;\n  font-size: 14px;\n  letter-spacing: 0.22px;\n  color: white;\n}\n.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  color: #3f8efc;\n}\n.copyright-text[_ngcontent-%COMP%] {\n  font-family: "Roboto Regular", sans-serif;\n  font-size: 12px;\n  letter-spacing: 0.22px;\n  color: white;\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1.5rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 11px;\n    letter-spacing: 0.2px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 8px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 3px;\n    font-size: 22px;\n  }\n}\n@media (min-width: 576px) and (max-width: 767px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1.2rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 11px;\n    letter-spacing: 0.2px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 8px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 3px;\n    font-size: 22px;\n  }\n  .footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%], \n   .footer-links[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n    font-size: 11px;\n    letter-spacing: 0.2px;\n  }\n}\n@media (max-width: 575px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 9px;\n    letter-spacing: 0.1px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 5px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 2px;\n    font-size: 16px;\n  }\n  .footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%], \n   .footer-links[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n    font-size: 9px;\n    letter-spacing: 0.1px;\n  }\n}\n/*# sourceMappingURL=footer.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FooterComponent, { className: "FooterComponent", filePath: "src/app/footer/footer.component.ts", lineNumber: 12 });
