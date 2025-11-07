@@ -37182,11 +37182,11 @@ var PAGE_TITLE;
 })(PAGE_TITLE || (PAGE_TITLE = {}));
 var PAGE_DESCRIPTION;
 (function(PAGE_DESCRIPTION2) {
-  PAGE_DESCRIPTION2["ZIP_UTILS"] = "One place. Many tools. Quick and simple.";
-  PAGE_DESCRIPTION2["ZIP_TEXT"] = "Paste and share text instantly using a unique link.";
-  PAGE_DESCRIPTION2["ZIP_URL"] = "Shorten long URLs into simple, shareable links.";
-  PAGE_DESCRIPTION2["ZIP_QR"] = "Generate QR codes for links, text, or any data in one click.";
-  PAGE_DESCRIPTION2["NOT_FOUND"] = "The page you are looking for does not exist or may have been removed.";
+  PAGE_DESCRIPTION2["ZIP_UTILS"] = "\u26A1 One place. Many tools. Simply fast.";
+  PAGE_DESCRIPTION2["ZIP_TEXT"] = "\u{1F4AC} Paste and share instantly with a unique, secure link. \u{1F512}";
+  PAGE_DESCRIPTION2["ZIP_URL"] = "\u{1F517} Create short, simple, and shareable links in seconds.";
+  PAGE_DESCRIPTION2["ZIP_QR"] = "\u{1F4F1} Generate QR codes for links, text, or data \u2014 in one click.";
+  PAGE_DESCRIPTION2["NOT_FOUND"] = "The page you are looking for does not exist or may have been moved.";
 })(PAGE_DESCRIPTION || (PAGE_DESCRIPTION = {}));
 
 // src/app/services/header/header.service.ts
@@ -56943,7 +56943,7 @@ var ReactiveFormsModule = class _ReactiveFormsModule {
 // src/app/zip-text/zip-text.component.ts
 function ZipTextComponent_option_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 10);
+    \u0275\u0275elementStart(0, "option", 11);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -56956,8 +56956,8 @@ function ZipTextComponent_option_8_Template(rf, ctx) {
 }
 function ZipTextComponent_div_11_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 11);
-    \u0275\u0275element(1, "div", 12);
+    \u0275\u0275elementStart(0, "div", 12);
+    \u0275\u0275element(1, "div", 13);
     \u0275\u0275elementStart(2, "p");
     \u0275\u0275text(3, "Generating link...");
     \u0275\u0275elementEnd()();
@@ -57006,7 +57006,7 @@ var ZipTextComponent = class _ZipTextComponent {
   static \u0275fac = function ZipTextComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ZipTextComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextComponent, selectors: [["app-zip-text"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 12, vars: 7, consts: [[1, "main-content-text"], [1, "textarea-flex-wrapper"], ["rows", "8", "placeholder", "Paste your text here...", 3, "ngModelChange", "ngModel"], [1, "button-row"], [1, "dropdown-group"], ["for", "expiry-select"], ["id", "expiry-select", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [3, "click", "disabled"], ["class", "loader-overlay", 4, "ngIf"], [3, "value"], [1, "loader-overlay"], [1, "spinner"]], template: function ZipTextComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextComponent, selectors: [["app-zip-text"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 14, vars: 7, consts: [[1, "main-content-text"], [1, "textarea-flex-wrapper"], ["rows", "8", "placeholder", "Paste your text here...", 3, "ngModelChange", "ngModel"], [1, "button-row"], [1, "dropdown-group"], ["for", "expiry-select"], ["id", "expiry-select", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [3, "click", "disabled"], ["class", "loader-overlay", 4, "ngIf"], [1, "footer-note"], [3, "value"], [1, "loader-overlay"], [1, "spinner"]], template: function ZipTextComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "textarea", 2);
       \u0275\u0275twoWayListener("ngModelChange", function ZipTextComponent_Template_textarea_ngModelChange_2_listener($event) {
@@ -57032,6 +57032,9 @@ var ZipTextComponent = class _ZipTextComponent {
       \u0275\u0275elementEnd()()();
       \u0275\u0275template(11, ZipTextComponent_div_11_Template, 4, 0, "div", 9);
       \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(12, "p", 10);
+      \u0275\u0275text(13, "Note - We encrypt every message before storing it, ensuring complete privacy. No one can access your text, and it\u2019s permanently removed once the expiry time is reached.");
+      \u0275\u0275elementEnd();
     }
     if (rf & 2) {
       \u0275\u0275classProp("fade-out", ctx.loading);
@@ -57046,7 +57049,7 @@ var ZipTextComponent = class _ZipTextComponent {
       \u0275\u0275advance(2);
       \u0275\u0275property("ngIf", ctx.loading);
     }
-  }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, CommonModule, NgForOf, NgIf], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n}\n.main-content-text[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  color: var(--primary);\n  margin-bottom: 1rem;\n}\ntextarea[_ngcontent-%COMP%], \ninput[type=text][_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.75rem;\n  font-size: 1rem;\n  margin-bottom: 1rem;\n  background: white;\n  color: #333;\n}\nbutton[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\nbutton[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\nbutton[_ngcontent-%COMP%]:disabled {\n  background: #ccc;\n  color: #666;\n  cursor: not-allowed;\n  opacity: 0.7;\n  box-shadow: none;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.button-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  gap: 1rem;\n}\n.dropdown-group[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.dropdown-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: var(--primary);\n  white-space: nowrap;\n}\n.dropdown-group[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 0.5rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  border: 1px solid #ccc;\n  background: white;\n  color: #333;\n}\n.main-content-text[_ngcontent-%COMP%] {\n  position: relative;\n  opacity: 1;\n  transition: opacity 0.3s ease;\n}\n.main-content-text.fade-out[_ngcontent-%COMP%] {\n  opacity: 0.4;\n}\n.loader-overlay[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: rgba(0, 0, 0, 0.35);\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n  z-index: 10;\n  animation: _ngcontent-%COMP%_fadeIn 0.2s ease-in-out;\n  color: #fff;\n  font-weight: 500;\n}\n.loader-overlay[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: var(--secondary);\n  opacity: 0.9;\n  font-size: 14px;\n  font-weight: 500;\n}\n.spinner[_ngcontent-%COMP%] {\n  width: 30px;\n  height: 30px;\n  border: 3px solid #ccc;\n  border-top-color: var(--secondary);\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.8s linear infinite;\n  margin-bottom: 8px;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n@keyframes _ngcontent-%COMP%_fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n/*# sourceMappingURL=zip-text.component.css.map */"] });
+  }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, CommonModule, NgForOf, NgIf], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n  margin-bottom: 1rem;\n}\n.main-content-text[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  color: var(--primary);\n  margin-bottom: 1rem;\n}\ntextarea[_ngcontent-%COMP%], \ninput[type=text][_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.75rem;\n  font-size: 1rem;\n  margin-bottom: 1rem;\n  background: white;\n  color: #333;\n}\nbutton[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\nbutton[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\nbutton[_ngcontent-%COMP%]:disabled {\n  background: #ccc;\n  color: #666;\n  cursor: not-allowed;\n  opacity: 0.7;\n  box-shadow: none;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.button-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  gap: 1rem;\n}\n.dropdown-group[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.dropdown-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: var(--primary);\n  white-space: nowrap;\n}\n.dropdown-group[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 0.5rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  border: 1px solid #ccc;\n  background: white;\n  color: #333;\n}\n.main-content-text[_ngcontent-%COMP%] {\n  position: relative;\n  opacity: 1;\n  transition: opacity 0.3s ease;\n}\n.main-content-text.fade-out[_ngcontent-%COMP%] {\n  opacity: 0.4;\n}\n.loader-overlay[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: rgba(0, 0, 0, 0.35);\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n  z-index: 10;\n  animation: _ngcontent-%COMP%_fadeIn 0.2s ease-in-out;\n  color: #fff;\n  font-weight: 500;\n}\n.loader-overlay[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: var(--secondary);\n  opacity: 0.9;\n  font-size: 14px;\n  font-weight: 500;\n}\n.spinner[_ngcontent-%COMP%] {\n  width: 30px;\n  height: 30px;\n  border: 3px solid #ccc;\n  border-top-color: var(--secondary);\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.8s linear infinite;\n  margin-bottom: 8px;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n@keyframes _ngcontent-%COMP%_fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n.footer-note[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 1rem auto;\n  font-size: 14px;\n}\n/*# sourceMappingURL=zip-text.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextComponent, { className: "ZipTextComponent", filePath: "src/app/zip-text/zip-text.component.ts", lineNumber: 16 });
@@ -58087,6 +58090,22 @@ var FooterComponent = class _FooterComponent {
 })();
 
 // src/app/header/header.component.ts
+function HeaderComponent_span_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275element(1, "i", 8);
+    \u0275\u0275text(2, " Dark");
+    \u0275\u0275elementEnd();
+  }
+}
+function HeaderComponent_span_7_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275element(1, "i", 9);
+    \u0275\u0275text(2, " Light");
+    \u0275\u0275elementEnd();
+  }
+}
 var ThemeType;
 (function(ThemeType2) {
   ThemeType2["LIGHT"] = "light";
@@ -58097,6 +58116,7 @@ var HeaderComponent = class _HeaderComponent {
   isBrowser;
   commonService = inject(CommonService);
   headerService = inject(HeaderService);
+  currentTheme = ThemeType.LIGHT;
   pageTitleAndDescription = this.headerService.pageTitleAndDescription;
   constructor(platformId) {
     this.platformId = platformId;
@@ -58137,6 +58157,7 @@ var HeaderComponent = class _HeaderComponent {
   applyTheme(theme) {
     if (!this.isBrowser)
       return;
+    this.currentTheme = theme;
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }
@@ -58149,7 +58170,7 @@ var HeaderComponent = class _HeaderComponent {
   static \u0275fac = function HeaderComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HeaderComponent)(\u0275\u0275directiveInject(PLATFORM_ID));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 11, vars: 2, consts: [[1, "py-5", "px-3"], [1, "toggle-button", "home-redirect"], ["id", "homeRedirect", "routerLink", "/"], [1, "toggle-button", "theme-toggle"], ["id", "themeToggle", 3, "click"], [1, "app-name"], [1, "app-description", "my-2"]], template: function HeaderComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HeaderComponent, selectors: [["app-header"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 12, vars: 4, consts: [[1, "py-5", "px-3"], [1, "toggle-button", "home-redirect"], ["id", "homeRedirect", "routerLink", "/"], [1, "toggle-button", "theme-toggle"], ["id", "themeToggle", 3, "click"], [4, "ngIf"], [1, "app-name"], [1, "app-description", "my-2"], [1, "fa", "fa-moon"], [1, "fa", "fa-sun", "yellow-sun"]], template: function HeaderComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "header", 0)(1, "div", 1)(2, "button", 2);
       \u0275\u0275text(3, "\u{1F3E0} Home");
@@ -58158,25 +58179,29 @@ var HeaderComponent = class _HeaderComponent {
       \u0275\u0275listener("click", function HeaderComponent_Template_button_click_5_listener() {
         return ctx.toggleTheme();
       });
-      \u0275\u0275text(6, "Toggle Theme");
+      \u0275\u0275template(6, HeaderComponent_span_6_Template, 3, 0, "span", 5)(7, HeaderComponent_span_7_Template, 3, 0, "span", 5);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(7, "h1", 5);
-      \u0275\u0275text(8);
+      \u0275\u0275elementStart(8, "h1", 6);
+      \u0275\u0275text(9);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(9, "p", 6);
-      \u0275\u0275text(10);
+      \u0275\u0275elementStart(10, "p", 7);
+      \u0275\u0275text(11);
       \u0275\u0275elementEnd()();
     }
     if (rf & 2) {
-      \u0275\u0275advance(8);
+      \u0275\u0275advance(6);
+      \u0275\u0275property("ngIf", ctx.currentTheme === "light");
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.currentTheme === "dark");
+      \u0275\u0275advance(2);
       \u0275\u0275textInterpolate(ctx.pageTitleAndDescription().pageTitle);
       \u0275\u0275advance(2);
       \u0275\u0275textInterpolate1(" ", ctx.pageTitleAndDescription().pageDescription, " ");
     }
-  }, dependencies: [RouterModule, RouterLink], styles: ["\n\nheader[_ngcontent-%COMP%] {\n  background: var(--banner-gradient);\n  text-align: center;\n  color: white;\n  box-shadow: 0 4px 12px var(--shadow);\n  position: relative;\n}\nheader[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 2.5rem;\n  font-weight: bold;\n}\nheader[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0.5rem auto 1rem auto;\n  font-size: 1.1rem;\n}\n.toggle-button[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 1rem;\n}\n.theme-toggle[_ngcontent-%COMP%] {\n  right: 1rem;\n}\n.home-redirect[_ngcontent-%COMP%] {\n  left: 1rem;\n}\n.theme-toggle[_ngcontent-%COMP%]   button[_ngcontent-%COMP%], \n.home-redirect[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  background: var(--card-bg);\n  border: none;\n  border-radius: 1.5rem;\n  padding: 0.3rem 0.75rem;\n  font-size: 0.75rem;\n  font-weight: 600;\n  cursor: pointer;\n  color: var(--primary);\n  box-shadow: 0 2px 5px var(--shadow);\n  transition: background 0.3s, color 0.3s;\n}\n@media screen and (max-width: 768px) {\n  header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n    font-size: 2rem;\n  }\n  .toggle-button[_ngcontent-%COMP%] {\n    top: 0.5rem;\n  }\n  .theme-toggle[_ngcontent-%COMP%] {\n    right: 0.5rem;\n  }\n  .home-redirect[_ngcontent-%COMP%] {\n    left: 0.5rem;\n  }\n}\n/*# sourceMappingURL=header.component.css.map */"] });
+  }, dependencies: [RouterModule, RouterLink, CommonModule, NgIf], styles: ["\n\nheader[_ngcontent-%COMP%] {\n  background: var(--banner-gradient);\n  text-align: center;\n  color: white;\n  box-shadow: 0 4px 12px var(--shadow);\n  position: relative;\n}\nheader[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 2.5rem;\n  font-weight: bold;\n}\nheader[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0.5rem auto 1rem auto;\n  font-size: 1.1rem;\n}\n.toggle-button[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 1rem;\n}\n.theme-toggle[_ngcontent-%COMP%] {\n  right: 1rem;\n}\n.home-redirect[_ngcontent-%COMP%] {\n  left: 1rem;\n}\n.theme-toggle[_ngcontent-%COMP%]   button[_ngcontent-%COMP%], \n.home-redirect[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  background: var(--card-bg);\n  border: none;\n  border-radius: 1.5rem;\n  padding: 0.3rem 0.75rem;\n  font-size: 0.75rem;\n  font-weight: 600;\n  cursor: pointer;\n  color: var(--primary);\n  box-shadow: 0 2px 5px var(--shadow);\n  transition: background 0.3s, color 0.3s;\n}\n@media screen and (max-width: 768px) {\n  header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n    font-size: 2rem;\n  }\n  .toggle-button[_ngcontent-%COMP%] {\n    top: 0.5rem;\n  }\n  .theme-toggle[_ngcontent-%COMP%] {\n    right: 0.5rem;\n  }\n  .home-redirect[_ngcontent-%COMP%] {\n    left: 0.5rem;\n  }\n}\n.yellow-sun[_ngcontent-%COMP%] {\n  color: yellow;\n}\n/*# sourceMappingURL=header.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src/app/header/header.component.ts", lineNumber: 21 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src/app/header/header.component.ts", lineNumber: 22 });
 })();
 
 // src/app/app.component.ts
