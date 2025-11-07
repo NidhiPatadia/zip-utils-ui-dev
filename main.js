@@ -57105,6 +57105,7 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
   copied = false;
   textCopied = false;
   showSnackbar = false;
+  backButtonText = "";
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get("id");
     const tempText = this.commonService.getTempText();
@@ -57115,7 +57116,9 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
     if (tempText) {
       this.text = tempText;
       this.commonService.clearTempText();
+      this.backButtonText = "Back";
     } else if (this.id) {
+      this.backButtonText = "Add New Text";
       this.commonService.getZipText(this.id).subscribe({
         next: (response) => {
           this.text = response.data?.getZipText || "";
@@ -57160,14 +57163,14 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
   static \u0275fac = function ZipTextViewerComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ZipTextViewerComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextViewerComponent, selectors: [["app-text-viewer"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 20, vars: 11, consts: [[1, "main-content-text"], ["title", "Go back", 1, "back-btn", 3, "click"], [1, "fa-solid", "fa-arrow-left", "fa"], [1, "textarea-flex-wrapper"], ["rows", "8", "readonly", ""], ["title", "Copy text", 1, "copy-text-btn", 3, "click"], [4, "ngIf"], [1, "copy-url-wrapper"], [1, "copy-url-label"], [1, "copy-url-box"], [1, "url-text"], ["title", "Copy link", 1, "copy-btn", 3, "click"], ["class", "snackbar", 4, "ngIf"], [1, "fa-solid", "fa", "fa-copy"], [1, "fa-solid", "fa", "fa-clipboard-check"], [1, "snackbar"]], template: function ZipTextViewerComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextViewerComponent, selectors: [["app-text-viewer"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 20, vars: 12, consts: [[1, "main-content-text"], ["title", "Go back", 1, "back-btn", 3, "click"], [1, "fa-solid", "fa-arrow-left", "fa"], [1, "textarea-flex-wrapper"], ["rows", "8", "readonly", ""], ["title", "Copy text", 1, "copy-text-btn", 3, "click"], [4, "ngIf"], [1, "copy-url-wrapper"], [1, "copy-url-label"], [1, "copy-url-box"], [1, "url-text"], ["title", "Copy link", 1, "copy-btn", 3, "click"], ["class", "snackbar", 4, "ngIf"], [1, "fa-solid", "fa", "fa-copy"], [1, "fa-solid", "fa", "fa-clipboard-check"], [1, "snackbar"]], template: function ZipTextViewerComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "button", 1);
       \u0275\u0275listener("click", function ZipTextViewerComponent_Template_button_click_1_listener() {
         return ctx.goBack();
       });
       \u0275\u0275element(2, "i", 2);
-      \u0275\u0275text(3, " Back ");
+      \u0275\u0275text(3);
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(4, "div", 3)(5, "textarea", 4);
       \u0275\u0275text(6);
@@ -57194,7 +57197,9 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
-      \u0275\u0275advance(6);
+      \u0275\u0275advance(3);
+      \u0275\u0275textInterpolate1(" ", ctx.backButtonText, " ");
+      \u0275\u0275advance(3);
       \u0275\u0275textInterpolate(ctx.text);
       \u0275\u0275advance();
       \u0275\u0275classProp("copied", ctx.textCopied);
