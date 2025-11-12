@@ -50491,7 +50491,7 @@ var GraphQL = {
     }
   `,
   generateZipTextUrl: gql2`
-    mutation GenerateZipTextUrl($text: String!, $expiryInMinutes: Int!) {
+    mutation GenerateZipTextUrl($text: String!, $expiryInMinutes: Int) {
       generateZipTextUrl(text: $text, expiryInMinutes: $expiryInMinutes)
     }
   `,
@@ -56972,7 +56972,8 @@ var ZipTextComponent = class _ZipTextComponent {
     { text: "30 min", value: 30 },
     { text: "1 hour", value: 60 },
     { text: "6 hours", value: 360 },
-    { text: "1 day", value: 1440 }
+    { text: "1 day", value: 1440 },
+    { text: "No Expiry", value: null }
   ];
   textInput = "";
   expiryInMinutes = 10;
@@ -56988,7 +56989,8 @@ var ZipTextComponent = class _ZipTextComponent {
       return;
     this.loading = true;
     this.commonService.setTempText(this.textInput);
-    this.commonService.generateZipTextUrl(this.textInput, parseInt(this.expiryInMinutes.toString(), 10)).subscribe({
+    const expiry = this.expiryInMinutes ? parseInt(this.expiryInMinutes.toString(), 10) : null;
+    this.commonService.generateZipTextUrl(this.textInput, expiry).subscribe({
       next: (response) => {
         const id = response.data?.generateZipTextUrl;
         if (id) {
