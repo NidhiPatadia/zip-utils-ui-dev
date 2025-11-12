@@ -37206,6 +37206,10 @@ var HeaderService = class _HeaderService {
     this._pageTitleAndDescription.set(pageTitleAndDescription);
     this.title.setTitle(pageTitleAndDescription.pageTitle);
     this.meta.updateTag({
+      name: "title",
+      content: pageTitleAndDescription.pageTitle
+    });
+    this.meta.updateTag({
       name: "description",
       content: pageTitleAndDescription.pageDescription
     });
