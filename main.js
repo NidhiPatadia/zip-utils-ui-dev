@@ -57361,7 +57361,7 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
 // src/environments/environment.ts
 var environment = {
   production: false,
-  nodeUrl: "https://dev-api.ziputils.com",
+  nodeUrl: "https://dev-api.ziputils.com/graphql",
   angularUrl: "https://dev.ziputils.com"
 };
 
