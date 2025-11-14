@@ -58325,7 +58325,7 @@ var AppComponent = class _AppComponent {
       const notFound_r1 = \u0275\u0275reference(2);
       \u0275\u0275property("ngIf", !ctx.showNotFoundPage)("ngIfElse", notFound_r1);
     }
-  }, dependencies: [RouterOutlet, HeaderComponent, FooterComponent, PageNotFoundComponent, CommonModule, NgIf], styles: ["\n\n.custom-container[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.header-container[_ngcontent-%COMP%] {\n  border-bottom: 1px solid #ddd;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.footer-container[_ngcontent-%COMP%] {\n  border-top: 1px solid #737373;\n}\n/*# sourceMappingURL=app.component.css.map */"] });
+  }, dependencies: [RouterOutlet, HeaderComponent, FooterComponent, PageNotFoundComponent, CommonModule, NgIf], styles: ["\n\n.custom-container[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.header-container[_ngcontent-%COMP%] {\n  flex: 0 1 auto;\n  border-bottom: 1px solid #ddd;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.footer-container[_ngcontent-%COMP%] {\n  flex: 0 1 auto;\n  border-top: 1px solid #737373;\n}\n/*# sourceMappingURL=app.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src/app/app.component.ts", lineNumber: 17 });
