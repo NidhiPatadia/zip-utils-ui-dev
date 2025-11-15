@@ -58148,7 +58148,7 @@ var FooterComponent = class _FooterComponent {
   static \u0275fac = function FooterComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FooterComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FooterComponent, selectors: [["app-footer"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 24, vars: 2, consts: [[1, "footer-box"], [1, "container", "py-3"], [1, "row"], [1, "col-12"], [1, "footer-head"], [1, "row", "mb-2"], [1, "col-3", "col-sm-4", "col-lg-3"], [1, "footer-logo-container"], ["routerLink", "/", 1, "d-inline-block", "h-100", "mw-100", "text-decoration-none"], [1, "footer-title"], [1, "col-9", "col-sm-8", "col-lg-9"], [1, "footer-links", "text-end"], [1, "legal-policy"], ["for", "legal-policy"], ["id", "legal-policy", "href", "https://drive.google.com/file/d/1Ed_Can1LipXpwhIEqy_igWL9qxn28tMQ/view", "target", "_blank", 1, "text-decoration-none", "footer-link"], [1, "contact-us"], ["for", "contact-us"], ["id", "contact-us", "href", "mailto:ziputils@proton.me", 1, "text-decoration-none", "footer-link"], [1, "copyright-text", "mt-3"]], template: function FooterComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FooterComponent, selectors: [["app-footer"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 24, vars: 2, consts: [[1, "footer-box"], [1, "container", "py-3"], [1, "row"], [1, "col-12"], [1, "footer-head"], [1, "row", "mb-2"], [1, "col-3", "col-sm-4", "col-lg-3"], [1, "footer-logo-container"], ["routerLink", "/", 1, "d-inline-block", "h-100", "mw-100", "text-decoration-none"], [1, "footer-title"], [1, "col-9", "col-sm-8", "col-lg-9"], [1, "footer-links", "text-end"], [1, "legal-policy"], ["for", "legal-policy"], ["id", "legal-policy", "href", "https://drive.google.com/file/d/1Ed_Can1LipXpwhIEqy_igWL9qxn28tMQ/view", "target", "_blank", 1, "text-decoration-none", "footer-link"], [1, "contact-us"], ["for", "contact-us"], ["id", "contact-us", "href", "mailto:ziputils25@gmail.com", 1, "text-decoration-none", "footer-link"], [1, "copyright-text", "mt-3"]], template: function FooterComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "div", 4)(5, "div", 5)(6, "div", 6)(7, "div", 7)(8, "a", 8)(9, "div", 9);
       \u0275\u0275text(10);
@@ -58162,7 +58162,7 @@ var FooterComponent = class _FooterComponent {
       \u0275\u0275text(19, "Contact Us:");
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(20, "a", 17);
-      \u0275\u0275text(21, " ziputils@proton.me ");
+      \u0275\u0275text(21, " ziputils25@gmail.com ");
       \u0275\u0275elementEnd()()()()()();
       \u0275\u0275elementStart(22, "div", 18);
       \u0275\u0275text(23);
