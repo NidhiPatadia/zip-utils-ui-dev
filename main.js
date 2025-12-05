@@ -57367,7 +57367,8 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
 var environment = {
   production: false,
   nodeUrl: "https://dev-api.ziputils.com/graphql",
-  angularUrl: "https://dev.ziputils.com"
+  angularUrl: "https://dev.ziputils.com",
+  gaMeasurementId: null
 };
 
 // src/app/zip-url/zip-url.component.ts
@@ -58271,6 +58272,44 @@ var HeaderComponent = class _HeaderComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src/app/header/header.component.ts", lineNumber: 22 });
 })();
 
+// src/app/services/google-analytics/google-analytics.service.ts
+var GoogleAnalyticsService = class _GoogleAnalyticsService {
+  measurementId = environment.gaMeasurementId;
+  initialized = false;
+  init() {
+    if (!environment.production || !this.measurementId || this.initialized) {
+      return;
+    }
+    this.initialized = true;
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${this.measurementId}`;
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag(...args) {
+      window.dataLayer.push(args);
+    };
+    window.gtag("js", /* @__PURE__ */ new Date());
+    window.gtag("config", this.measurementId, {
+      send_page_view: false
+    });
+  }
+  trackPageView(url) {
+    if (!environment.production || !this.measurementId || !this.initialized) {
+      return;
+    }
+    window.gtag("event", "page_view", {
+      page_path: url,
+      page_location: window.location.href,
+      page_title: document.title
+    });
+  }
+  static \u0275fac = function GoogleAnalyticsService_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _GoogleAnalyticsService)();
+  };
+  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _GoogleAnalyticsService, factory: _GoogleAnalyticsService.\u0275fac, providedIn: "root" });
+};
+
 // src/app/app.component.ts
 function AppComponent_ng_container_0_Template(rf, ctx) {
   if (rf & 1) {
@@ -58312,12 +58351,14 @@ var AppComponent = class _AppComponent {
   router;
   platformId = inject(PLATFORM_ID);
   commonService = inject(CommonService);
+  gaService = inject(GoogleAnalyticsService);
   showNotFoundPage = false;
   showLoaderOverlay = true;
   constructor(router) {
     this.router = router;
     this.changeScreenToShowLoader();
-    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe(() => {
+    this.gaService.init();
+    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe((event) => {
       const currentRoute = this.router.routerState.snapshot.root.firstChild;
       const path = currentRoute?.routeConfig?.path;
       if (path === "**") {
@@ -58332,6 +58373,8 @@ var AppComponent = class _AppComponent {
           this.changeScreenToShowApp();
         }
       }
+      const url = event.urlAfterRedirects || event.url;
+      this.gaService.trackPageView(url);
     });
   }
   // handle redirection for text-viewer
@@ -58410,7 +58453,7 @@ var AppComponent = class _AppComponent {
   ], styles: ["\n\n.custom-container[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.header-container[_ngcontent-%COMP%] {\n  flex: 0 1 auto;\n  border-bottom: 1px solid #ddd;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.footer-container[_ngcontent-%COMP%] {\n  flex: 0 1 auto;\n  border-top: 1px solid #737373;\n}\n/*# sourceMappingURL=app.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src/app/app.component.ts", lineNumber: 27 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src/app/app.component.ts", lineNumber: 28 });
 })();
 
 // src/main.ts
