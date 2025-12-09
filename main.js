@@ -57367,8 +57367,7 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
 var environment = {
   production: false,
   nodeUrl: "https://dev-api.ziputils.com/graphql",
-  angularUrl: "https://dev.ziputils.com",
-  gaMeasurementId: null
+  angularUrl: "https://dev.ziputils.com"
 };
 
 // src/app/zip-url/zip-url.component.ts
@@ -58318,7 +58317,7 @@ var AppComponent = class _AppComponent {
   constructor(router) {
     this.router = router;
     this.changeScreenToShowLoader();
-    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe((event) => {
+    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe(() => {
       const currentRoute = this.router.routerState.snapshot.root.firstChild;
       const path = currentRoute?.routeConfig?.path;
       if (path === "**") {
