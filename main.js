@@ -57048,23 +57048,99 @@ var LoaderOverlayComponent = class _LoaderOverlayComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(LoaderOverlayComponent, { className: "LoaderOverlayComponent", filePath: "src/app/loader-overlay/loader-overlay.component.ts", lineNumber: 11 });
 })();
 
+// src/app/bot-guard/bot-guard.component.ts
+function BotGuardComponent_input_1_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "input", 2);
+    \u0275\u0275twoWayListener("ngModelChange", function BotGuardComponent_input_1_Template_input_ngModelChange_0_listener($event) {
+      const field_r2 = \u0275\u0275restoreView(_r1).$implicit;
+      \u0275\u0275twoWayBindingSet(field_r2.value, $event) || (field_r2.value = $event);
+      return \u0275\u0275resetView($event);
+    });
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const field_r2 = ctx.$implicit;
+    \u0275\u0275property("name", field_r2.name);
+    \u0275\u0275twoWayProperty("ngModel", field_r2.value);
+  }
+}
+var BotGuardComponent = class _BotGuardComponent {
+  startTime = Date.now();
+  userInteracted = false;
+  jsEnabled = true;
+  honeypots = [];
+  ngOnInit() {
+    this.createHoneypots();
+    this.detectUserInteraction();
+  }
+  createHoneypots() {
+    this.honeypots = Array.from({ length: 3 }).map(() => ({
+      name: `hp_${Math.random().toString(36).slice(2, 10)}`,
+      value: ""
+    }));
+  }
+  detectUserInteraction() {
+    const markInteraction = () => this.userInteracted = true;
+    ["mousemove", "keydown", "touchstart", "scroll"].forEach((event) => {
+      window.addEventListener(event, markInteraction, { once: true });
+    });
+  }
+  validate() {
+    const timeTaken = Date.now() - this.startTime;
+    if (!this.jsEnabled) {
+      return { valid: false, reason: "JS disabled" };
+    }
+    if (timeTaken < 3e3) {
+      return { valid: false, reason: "Submitted too fast" };
+    }
+    if (!this.userInteracted) {
+      return { valid: false, reason: "No user interaction detected" };
+    }
+    for (const field of this.honeypots) {
+      if (field.value.trim()) {
+        return { valid: false, reason: "Bot detected (hidden field filled)" };
+      }
+    }
+    return { valid: true };
+  }
+  static \u0275fac = function BotGuardComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _BotGuardComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _BotGuardComponent, selectors: [["app-bot-guard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 2, vars: 1, consts: [["aria-hidden", "true"], ["type", "text", "tabindex", "-1", "autocomplete", "off", "class", "host", 3, "name", "ngModel", "ngModelChange", 4, "ngFor", "ngForOf"], ["type", "text", "tabindex", "-1", "autocomplete", "off", 1, "host", 3, "ngModelChange", "name", "ngModel"]], template: function BotGuardComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275elementStart(0, "div", 0);
+      \u0275\u0275template(1, BotGuardComponent_input_1_Template, 1, 2, "input", 1);
+      \u0275\u0275elementEnd();
+    }
+    if (rf & 2) {
+      \u0275\u0275advance();
+      \u0275\u0275property("ngForOf", ctx.honeypots);
+    }
+  }, dependencies: [FormsModule, DefaultValueAccessor, NgControlStatus, NgModel, CommonModule, NgForOf], styles: ["\n\n[_nghost-%COMP%] {\n  display: block;\n  position: absolute;\n  pointer-events: none;\n  width: 0;\n  height: 0;\n  overflow: hidden;\n}\n/*# sourceMappingURL=bot-guard.component.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(BotGuardComponent, { className: "BotGuardComponent", filePath: "src/app/bot-guard/bot-guard.component.ts", lineNumber: 12 });
+})();
+
 // src/app/zip-text/zip-text.component.ts
 function ZipTextComponent_option_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 11);
+    \u0275\u0275elementStart(0, "option", 12);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const expiryTime_r1 = ctx.$implicit;
-    \u0275\u0275property("value", expiryTime_r1.value);
+    const expiryTime_r2 = ctx.$implicit;
+    \u0275\u0275property("value", expiryTime_r2.value);
     \u0275\u0275advance();
-    \u0275\u0275textInterpolate1(" ", expiryTime_r1.text, " ");
+    \u0275\u0275textInterpolate1(" ", expiryTime_r2.text, " ");
   }
 }
-function ZipTextComponent_app_loader_overlay_11_Template(rf, ctx) {
+function ZipTextComponent_app_loader_overlay_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "app-loader-overlay", 12);
+    \u0275\u0275element(0, "app-loader-overlay", 13);
   }
   if (rf & 2) {
     \u0275\u0275property("message", "Generating link...");
@@ -57091,7 +57167,12 @@ var ZipTextComponent = class _ZipTextComponent {
       pageDescription: PAGE_DESCRIPTION.ZIP_TEXT
     });
   }
-  generateLink() {
+  generateLink(botGuard) {
+    const guardResult = botGuard.validate();
+    if (!guardResult.valid) {
+      console.warn("Blocked by bot guard:", guardResult.reason);
+      return;
+    }
     if (!this.textInput.trim())
       return;
     this.loading = true;
@@ -57115,34 +57196,40 @@ var ZipTextComponent = class _ZipTextComponent {
   static \u0275fac = function ZipTextComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ZipTextComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextComponent, selectors: [["app-zip-text"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 14, vars: 7, consts: [[1, "main-content-text"], [1, "textarea-flex-wrapper"], ["rows", "8", "placeholder", "Paste your text here...", 3, "ngModelChange", "ngModel"], [1, "button-row"], [1, "dropdown-group"], ["for", "expiry-select"], ["id", "expiry-select", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [3, "click", "disabled"], [3, "message", 4, "ngIf"], [1, "footer-note"], [3, "value"], [3, "message"]], template: function ZipTextComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextComponent, selectors: [["app-zip-text"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 16, vars: 7, consts: [["botGuard", ""], [1, "main-content-text"], [1, "textarea-flex-wrapper"], ["rows", "8", "placeholder", "Paste your text here...", 3, "ngModelChange", "ngModel"], [1, "button-row"], [1, "dropdown-group"], ["for", "expiry-select"], ["id", "expiry-select", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [3, "click", "disabled"], [3, "message", 4, "ngIf"], [1, "footer-note"], [3, "value"], [3, "message"]], template: function ZipTextComponent_Template(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "textarea", 2);
+      const _r1 = \u0275\u0275getCurrentView();
+      \u0275\u0275elementStart(0, "div", 1)(1, "div", 2)(2, "textarea", 3);
       \u0275\u0275twoWayListener("ngModelChange", function ZipTextComponent_Template_textarea_ngModelChange_2_listener($event) {
+        \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.textInput, $event) || (ctx.textInput = $event);
-        return $event;
+        return \u0275\u0275resetView($event);
       });
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(3, "div", 3)(4, "div", 4)(5, "label", 5);
+      \u0275\u0275elementStart(3, "div", 4)(4, "div", 5)(5, "label", 6);
       \u0275\u0275text(6, "Expiry Time:");
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(7, "select", 6);
+      \u0275\u0275elementStart(7, "select", 7);
       \u0275\u0275twoWayListener("ngModelChange", function ZipTextComponent_Template_select_ngModelChange_7_listener($event) {
+        \u0275\u0275restoreView(_r1);
         \u0275\u0275twoWayBindingSet(ctx.expiryInMinutes, $event) || (ctx.expiryInMinutes = $event);
-        return $event;
+        return \u0275\u0275resetView($event);
       });
-      \u0275\u0275template(8, ZipTextComponent_option_8_Template, 2, 2, "option", 7);
+      \u0275\u0275template(8, ZipTextComponent_option_8_Template, 2, 2, "option", 8);
       \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(9, "button", 8);
-      \u0275\u0275listener("click", function ZipTextComponent_Template_button_click_9_listener() {
-        return ctx.generateLink();
+      \u0275\u0275element(9, "app-bot-guard", null, 0);
+      \u0275\u0275elementStart(11, "button", 9);
+      \u0275\u0275listener("click", function ZipTextComponent_Template_button_click_11_listener() {
+        \u0275\u0275restoreView(_r1);
+        const botGuard_r3 = \u0275\u0275reference(10);
+        return \u0275\u0275resetView(ctx.generateLink(botGuard_r3));
       });
-      \u0275\u0275text(10, " Generate Link ");
+      \u0275\u0275text(12, " Generate Link ");
       \u0275\u0275elementEnd()()();
-      \u0275\u0275template(11, ZipTextComponent_app_loader_overlay_11_Template, 1, 1, "app-loader-overlay", 9);
+      \u0275\u0275template(13, ZipTextComponent_app_loader_overlay_13_Template, 1, 1, "app-loader-overlay", 10);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(12, "p", 10);
-      \u0275\u0275text(13, " Note - We encrypt every message before storing it, ensuring complete privacy. No one can access your text, and it\u2019s permanently removed once the expiry time is reached.\n");
+      \u0275\u0275elementStart(14, "p", 11);
+      \u0275\u0275text(15, " Note - We encrypt every message before storing it, ensuring complete privacy. No one can access your text, and it\u2019s permanently removed once the expiry time is reached.\n");
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
@@ -57153,15 +57240,15 @@ var ZipTextComponent = class _ZipTextComponent {
       \u0275\u0275twoWayProperty("ngModel", ctx.expiryInMinutes);
       \u0275\u0275advance();
       \u0275\u0275property("ngForOf", ctx.expiryTimes);
-      \u0275\u0275advance();
+      \u0275\u0275advance(3);
       \u0275\u0275property("disabled", !ctx.textInput.trim());
       \u0275\u0275advance(2);
       \u0275\u0275property("ngIf", ctx.loading);
     }
-  }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, CommonModule, NgForOf, NgIf, LoaderOverlayComponent], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n  margin-bottom: 1rem;\n}\n.main-content-text[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  color: var(--primary);\n  margin-bottom: 1rem;\n}\ntextarea[_ngcontent-%COMP%], \ninput[type=text][_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.75rem;\n  font-size: 1rem;\n  margin-bottom: 1rem;\n  background: white;\n  color: #333;\n}\nbutton[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\nbutton[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\nbutton[_ngcontent-%COMP%]:disabled {\n  background: #ccc;\n  color: #666;\n  cursor: not-allowed;\n  opacity: 0.7;\n  box-shadow: none;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.button-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  gap: 1rem;\n}\n.dropdown-group[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.dropdown-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: var(--primary);\n  white-space: nowrap;\n}\n.dropdown-group[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 0.5rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  border: 1px solid #ccc;\n  background: white;\n  color: #333;\n}\n.main-content-text[_ngcontent-%COMP%] {\n  position: relative;\n  opacity: 1;\n  transition: opacity 0.3s ease;\n}\n.main-content-text.fade-out[_ngcontent-%COMP%] {\n  opacity: 0.4;\n}\n.footer-note[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 1rem auto;\n  font-size: 14px;\n}\n/*# sourceMappingURL=zip-text.component.css.map */"] });
+  }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, CommonModule, NgForOf, NgIf, LoaderOverlayComponent, BotGuardComponent], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n  margin-bottom: 1rem;\n}\n.main-content-text[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  color: var(--primary);\n  margin-bottom: 1rem;\n}\ntextarea[_ngcontent-%COMP%], \ninput[type=text][_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.75rem;\n  font-size: 1rem;\n  margin-bottom: 1rem;\n  background: white;\n  color: #333;\n}\nbutton[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\nbutton[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\nbutton[_ngcontent-%COMP%]:disabled {\n  background: #ccc;\n  color: #666;\n  cursor: not-allowed;\n  opacity: 0.7;\n  box-shadow: none;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.button-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  gap: 1rem;\n}\n.dropdown-group[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.dropdown-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: var(--primary);\n  white-space: nowrap;\n}\n.dropdown-group[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 0.5rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  border: 1px solid #ccc;\n  background: white;\n  color: #333;\n}\n.main-content-text[_ngcontent-%COMP%] {\n  position: relative;\n  opacity: 1;\n  transition: opacity 0.3s ease;\n}\n.main-content-text.fade-out[_ngcontent-%COMP%] {\n  opacity: 0.4;\n}\n.footer-note[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 1rem auto;\n  font-size: 14px;\n}\n/*# sourceMappingURL=zip-text.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextComponent, { className: "ZipTextComponent", filePath: "src/app/zip-text/zip-text.component.ts", lineNumber: 17 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextComponent, { className: "ZipTextComponent", filePath: "src/app/zip-text/zip-text.component.ts", lineNumber: 18 });
 })();
 
 // src/app/copy-url-box/copy-url-box.component.ts

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/bot-guard/bot-guard.component.css"],
+  "sourcesContent": [":host {\n  display: block;\n  position: absolute;\n  pointer-events: none;\n  width: 0;\n  height: 0;\n  overflow: hidden;\n}"],
+  "mappings": ";AAAA;AACE,WAAS;AACT,YAAU;AACV,kBAAgB;AAChB,SAAO;AACP,UAAQ;AACR,YAAU;AACZ;",
+  "names": []
+}
