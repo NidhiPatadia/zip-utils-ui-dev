@@ -57224,7 +57224,7 @@ var ZipTextComponent = class _ZipTextComponent {
         const botGuard_r3 = \u0275\u0275reference(10);
         return \u0275\u0275resetView(ctx.generateLink(botGuard_r3));
       });
-      \u0275\u0275text(12, " Generate ");
+      \u0275\u0275text(12, " Generate Link ");
       \u0275\u0275elementEnd()()();
       \u0275\u0275template(13, ZipTextComponent_app_loader_overlay_13_Template, 1, 1, "app-loader-overlay", 10);
       \u0275\u0275elementEnd();
