@@ -57474,35 +57474,35 @@ function ZipUrlComponent_div_3_div_2_Template(rf, ctx) {
 }
 function ZipUrlComponent_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 7);
-    \u0275\u0275template(1, ZipUrlComponent_div_3_div_1_Template, 2, 0, "div", 5)(2, ZipUrlComponent_div_3_div_2_Template, 2, 0, "div", 5);
+    \u0275\u0275elementStart(0, "div", 8);
+    \u0275\u0275template(1, ZipUrlComponent_div_3_div_1_Template, 2, 0, "div", 6)(2, ZipUrlComponent_div_3_div_2_Template, 2, 0, "div", 6);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    let tmp_1_0;
     let tmp_2_0;
-    const ctx_r0 = \u0275\u0275nextContext();
+    let tmp_3_0;
+    const ctx_r2 = \u0275\u0275nextContext();
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", (tmp_1_0 = ctx_r0.urlForm.get("url")) == null ? null : tmp_1_0.errors == null ? null : tmp_1_0.errors["required"]);
+    \u0275\u0275property("ngIf", (tmp_2_0 = ctx_r2.urlForm.get("url")) == null ? null : tmp_2_0.errors == null ? null : tmp_2_0.errors["required"]);
     \u0275\u0275advance();
-    \u0275\u0275property("ngIf", (tmp_2_0 = ctx_r0.urlForm.get("url")) == null ? null : tmp_2_0.errors == null ? null : tmp_2_0.errors["pattern"]);
+    \u0275\u0275property("ngIf", (tmp_3_0 = ctx_r2.urlForm.get("url")) == null ? null : tmp_3_0.errors == null ? null : tmp_3_0.errors["pattern"]);
   }
 }
-function ZipUrlComponent_div_6_Template(rf, ctx) {
+function ZipUrlComponent_div_8_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div");
-    \u0275\u0275element(1, "app-copy-url-box", 8);
+    \u0275\u0275element(1, "app-copy-url-box", 9);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
-    const ctx_r0 = \u0275\u0275nextContext();
+    const ctx_r2 = \u0275\u0275nextContext();
     \u0275\u0275advance();
-    \u0275\u0275property("shortUrl", ctx_r0.shortUrl);
+    \u0275\u0275property("shortUrl", ctx_r2.shortUrl);
   }
 }
-function ZipUrlComponent_app_loader_overlay_7_Template(rf, ctx) {
+function ZipUrlComponent_app_loader_overlay_9_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "app-loader-overlay", 9);
+    \u0275\u0275element(0, "app-loader-overlay", 10);
   }
   if (rf & 2) {
     \u0275\u0275property("message", "Processing...");
@@ -57532,7 +57532,12 @@ var ZipUrlComponent = class _ZipUrlComponent {
       pageDescription: PAGE_DESCRIPTION.ZIP_URL
     });
   }
-  onSubmit() {
+  onSubmit(botGuard) {
+    const guardResult = botGuard.validate();
+    if (!guardResult.valid) {
+      console.warn("Blocked by bot guard:", guardResult.reason);
+      return;
+    }
     if (this.urlForm.valid) {
       const url = this.urlForm.value.url;
       console.log("URL to shorten:", url);
@@ -57562,27 +57567,31 @@ var ZipUrlComponent = class _ZipUrlComponent {
   static \u0275fac = function ZipUrlComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ZipUrlComponent)(\u0275\u0275directiveInject(FormBuilder));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipUrlComponent, selectors: [["app-zip-url"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 8, vars: 5, consts: [[1, "main-content-url"], [1, "tool-box", 3, "ngSubmit", "formGroup"], ["id", "url", "name", "url", "type", "text", "formControlName", "url", "placeholder", "Paste your long URL here...", "title", "Paste your long URL here...", 1, "form-control"], ["class", "validation-error", 4, "ngIf"], ["type", "submit", 1, "btn", "btn-primary", 3, "disabled"], [4, "ngIf"], [3, "message", 4, "ngIf"], [1, "validation-error"], [3, "shortUrl"], [3, "message"]], template: function ZipUrlComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipUrlComponent, selectors: [["app-zip-url"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 10, vars: 5, consts: [["botGuard", ""], [1, "main-content-url"], [1, "tool-box", 3, "ngSubmit", "formGroup"], ["id", "url", "name", "url", "type", "text", "formControlName", "url", "placeholder", "Paste your long URL here...", "title", "Paste your long URL here...", 1, "form-control"], ["class", "validation-error", 4, "ngIf"], ["type", "submit", 1, "btn", "btn-primary", 3, "disabled"], [4, "ngIf"], [3, "message", 4, "ngIf"], [1, "validation-error"], [3, "shortUrl"], [3, "message"]], template: function ZipUrlComponent_Template(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275elementStart(0, "div", 0)(1, "form", 1);
+      const _r1 = \u0275\u0275getCurrentView();
+      \u0275\u0275elementStart(0, "div", 1)(1, "form", 2);
       \u0275\u0275listener("ngSubmit", function ZipUrlComponent_Template_form_ngSubmit_1_listener() {
-        return ctx.onSubmit();
+        \u0275\u0275restoreView(_r1);
+        const botGuard_r2 = \u0275\u0275reference(5);
+        return \u0275\u0275resetView(ctx.onSubmit(botGuard_r2));
       });
-      \u0275\u0275element(2, "input", 2);
-      \u0275\u0275template(3, ZipUrlComponent_div_3_Template, 3, 2, "div", 3);
-      \u0275\u0275elementStart(4, "button", 4);
-      \u0275\u0275text(5, " Shorten URL ");
+      \u0275\u0275element(2, "input", 3);
+      \u0275\u0275template(3, ZipUrlComponent_div_3_Template, 3, 2, "div", 4);
+      \u0275\u0275element(4, "app-bot-guard", null, 0);
+      \u0275\u0275elementStart(6, "button", 5);
+      \u0275\u0275text(7, " Shorten URL ");
       \u0275\u0275elementEnd()();
-      \u0275\u0275template(6, ZipUrlComponent_div_6_Template, 2, 1, "div", 5)(7, ZipUrlComponent_app_loader_overlay_7_Template, 1, 1, "app-loader-overlay", 6);
+      \u0275\u0275template(8, ZipUrlComponent_div_8_Template, 2, 1, "div", 6)(9, ZipUrlComponent_app_loader_overlay_9_Template, 1, 1, "app-loader-overlay", 7);
       \u0275\u0275elementEnd();
     }
     if (rf & 2) {
-      let tmp_1_0;
+      let tmp_2_0;
       \u0275\u0275advance();
       \u0275\u0275property("formGroup", ctx.urlForm);
       \u0275\u0275advance(2);
-      \u0275\u0275property("ngIf", ((tmp_1_0 = ctx.urlForm.get("url")) == null ? null : tmp_1_0.invalid) && (((tmp_1_0 = ctx.urlForm.get("url")) == null ? null : tmp_1_0.touched) || ((tmp_1_0 = ctx.urlForm.get("url")) == null ? null : tmp_1_0.dirty)));
-      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ((tmp_2_0 = ctx.urlForm.get("url")) == null ? null : tmp_2_0.invalid) && (((tmp_2_0 = ctx.urlForm.get("url")) == null ? null : tmp_2_0.touched) || ((tmp_2_0 = ctx.urlForm.get("url")) == null ? null : tmp_2_0.dirty)));
+      \u0275\u0275advance(3);
       \u0275\u0275property("disabled", ctx.urlForm.invalid);
       \u0275\u0275advance(2);
       \u0275\u0275property("ngIf", ctx.shortUrl);
@@ -57600,11 +57609,12 @@ var ZipUrlComponent = class _ZipUrlComponent {
     FormGroupDirective,
     FormControlName,
     CopyUrlBoxComponent,
-    LoaderOverlayComponent
+    LoaderOverlayComponent,
+    BotGuardComponent
   ], styles: ["\n\n.main-content-url[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 3rem 1rem;\n  position: relative;\n  opacity: 1;\n  transition: opacity 0.3s ease;\n}\n.main-content-url.fade-out[_ngcontent-%COMP%] {\n  opacity: 0.4;\n}\n.tool-box[_ngcontent-%COMP%] {\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  max-width: 800px;\n  width: 100%;\n  padding: 2rem;\n  text-align: center;\n}\n.tool-box[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  margin-bottom: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.5rem;\n  font-size: 1rem;\n  background: #f0f2f5;\n  color: black;\n}\n.tool-box[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n.tool-box[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\n.loader-overlay[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: rgba(0, 0, 0, 0.35);\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n  z-index: 10;\n  animation: _ngcontent-%COMP%_fadeIn 0.2s ease-in-out;\n  color: #fff;\n  font-weight: 500;\n}\n.loader-overlay[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: #ddd;\n  opacity: 0.9;\n  font-size: 14px;\n  font-weight: 500;\n}\n.spinner[_ngcontent-%COMP%] {\n  width: 30px;\n  height: 30px;\n  border: 3px solid #ccc;\n  border-top-color: var(--secondary);\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.8s linear infinite;\n  margin-bottom: 8px;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n@keyframes _ngcontent-%COMP%_fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n/*# sourceMappingURL=zip-url.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipUrlComponent, { className: "ZipUrlComponent", filePath: "src/app/zip-url/zip-url.component.ts", lineNumber: 30 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipUrlComponent, { className: "ZipUrlComponent", filePath: "src/app/zip-url/zip-url.component.ts", lineNumber: 32 });
 })();
 
 // src/app/zip-qr/zip-qr.component.ts
