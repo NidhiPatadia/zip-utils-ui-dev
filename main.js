@@ -37175,7 +37175,7 @@ var VERSION4 = new Version("18.2.13");
 var PAGE_TITLE;
 (function(PAGE_TITLE2) {
   PAGE_TITLE2["ZIP_UTILS"] = "Zip-Utils";
-  PAGE_TITLE2["ZIP_TEXT"] = "Zip-Text";
+  PAGE_TITLE2["ZIP_TEXT"] = "Text Uploader";
   PAGE_TITLE2["ZIP_URL"] = "Zip-URL";
   PAGE_TITLE2["ZIP_QR"] = "Zip-QR";
   PAGE_TITLE2["NOT_FOUND"] = "Page Not Found!";
@@ -37193,6 +37193,18 @@ var RedirectionType;
   RedirectionType2["TEXT"] = "t";
   RedirectionType2["URL"] = "u";
 })(RedirectionType || (RedirectionType = {}));
+var TAB_TITLE;
+(function(TAB_TITLE2) {
+  TAB_TITLE2["ZIP_TEXT"] = "Text Transfer Online \u2013 Secure Text Uploader with Expiry | ZipUtils";
+})(TAB_TITLE || (TAB_TITLE = {}));
+var COMPONENT_TITLE;
+(function(COMPONENT_TITLE2) {
+  COMPONENT_TITLE2["ZIP_TEXT"] = "Text Transfer Online \u2013 Secure Text Uploader";
+})(COMPONENT_TITLE || (COMPONENT_TITLE = {}));
+var COMPONENT_DESCRIPTION;
+(function(COMPONENT_DESCRIPTION2) {
+  COMPONENT_DESCRIPTION2["ZIP_TEXT"] = "\u{1F4AC} ZipUtils helps you transfer text online securely without email or messaging apps. Upload text, generate a private link, and share it instantly with automatic expiry. \u{1F512}";
+})(COMPONENT_DESCRIPTION || (COMPONENT_DESCRIPTION = {}));
 
 // src/app/services/header/header.service.ts
 var HeaderService = class _HeaderService {
@@ -37209,7 +37221,7 @@ var HeaderService = class _HeaderService {
   pageTitleAndDescription = this._pageTitleAndDescription.asReadonly();
   setTitleAndDescription(pageTitleAndDescription) {
     this._pageTitleAndDescription.set(pageTitleAndDescription);
-    this.title.setTitle(pageTitleAndDescription.pageTitle);
+    this.title.setTitle(pageTitleAndDescription.tabTitle ?? pageTitleAndDescription.pageTitle);
     this.meta.updateTag({
       name: "title",
       content: pageTitleAndDescription.pageTitle
@@ -57124,10 +57136,105 @@ var BotGuardComponent = class _BotGuardComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(BotGuardComponent, { className: "BotGuardComponent", filePath: "src/app/bot-guard/bot-guard.component.ts", lineNumber: 12 });
 })();
 
+// src/app/content/text-faq.content.ts
+var ZIP_TEXT_FAQ = [
+  {
+    question: "How does text uploading work?",
+    answer: "Paste your text, choose an expiry time, and generate a secure link. The text is automatically deleted after expiry."
+  },
+  {
+    question: "Is uploaded text secure?",
+    answer: "Yes. ZipUtils encrypts uploaded text and removes it permanently after the selected expiry time."
+  },
+  {
+    question: "How long is uploaded text stored?",
+    answer: "Uploaded text is stored only until the expiry time you choose, after which it is permanently deleted."
+  },
+  {
+    question: "Who can access my uploaded text?",
+    answer: "Only people with the generated private link can access your uploaded text. Once expired, the link no longer works."
+  }
+];
+
+// src/app/faq/faq.component.ts
+function FaqComponent_section_0_div_4_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 5)(1, "h3", 6);
+    \u0275\u0275listener("click", function FaqComponent_section_0_div_4_Template_h3_click_1_listener() {
+      const i_r2 = \u0275\u0275restoreView(_r1).index;
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.toggle(i_r2));
+    });
+    \u0275\u0275elementStart(2, "span", 7);
+    \u0275\u0275text(3);
+    \u0275\u0275elementEnd();
+    \u0275\u0275element(4, "span", 8);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(5, "div", 9)(6, "p");
+    \u0275\u0275text(7);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const item_r4 = ctx.$implicit;
+    const i_r2 = ctx.index;
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275attribute("aria-expanded", ctx_r2.openIndex === i_r2);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(item_r4.question);
+    \u0275\u0275advance();
+    \u0275\u0275classProp("open", ctx_r2.openIndex === i_r2);
+    \u0275\u0275advance();
+    \u0275\u0275classProp("hidden", ctx_r2.openIndex !== i_r2);
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(item_r4.answer);
+  }
+}
+function FaqComponent_section_0_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "section", 1)(1, "h2", 2);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(3, "div", 3);
+    \u0275\u0275template(4, FaqComponent_section_0_div_4_Template, 8, 7, "div", 4);
+    \u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(ctx_r2.title);
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngForOf", ctx_r2.items);
+  }
+}
+var FaqComponent = class _FaqComponent {
+  title = "Frequently Asked Questions";
+  items = [];
+  openIndex = null;
+  toggle(index) {
+    this.openIndex = this.openIndex === index ? null : index;
+  }
+  static \u0275fac = function FaqComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _FaqComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FaqComponent, selectors: [["app-faq"]], inputs: { title: "title", items: "items" }, standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 1, vars: 1, consts: [["class", "faq-section", 4, "ngIf"], [1, "faq-section"], [1, "faq-title"], [1, "accordion"], ["class", "accordion-item", 4, "ngFor", "ngForOf"], [1, "accordion-item"], [1, "accordion-header", 3, "click"], [1, "question"], ["aria-hidden", "true", 1, "arrow"], [1, "accordion-content"]], template: function FaqComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275template(0, FaqComponent_section_0_Template, 5, 2, "section", 0);
+    }
+    if (rf & 2) {
+      \u0275\u0275property("ngIf", ctx.items.length);
+    }
+  }, dependencies: [CommonModule, NgForOf, NgIf], styles: ["\n\n.faq-section[_ngcontent-%COMP%] {\n  margin-top: 3rem;\n}\n.accordion-item[_ngcontent-%COMP%] {\n  border: 1px solid #747474;\n  border-radius: 4px;\n  background: transparent;\n  -webkit-backdrop-filter: blur(4px);\n  backdrop-filter: blur(4px);\n  margin-bottom: 10px;\n  color: var(--text);\n}\n.accordion-header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  cursor: pointer;\n  padding: 1rem 0;\n  font-size: 1.4rem;\n  font-weight: 3Zip-Text00;\n}\n.question[_ngcontent-%COMP%] {\n  flex: 1;\n}\n.arrow[_ngcontent-%COMP%] {\n  width: 10px;\n  height: 10px;\n  border-right: 2px solid var(--text);\n  border-bottom: 2px solid var(--text);\n  transform: rotate(45deg);\n  transition: transform 0.3s ease;\n  margin-right: 1rem;\n}\n.arrow.open[_ngcontent-%COMP%] {\n  transform: rotate(-135deg);\n}\n.accordion-content[_ngcontent-%COMP%] {\n  padding-bottom: 1rem;\n}\n.accordion-content.hidden[_ngcontent-%COMP%] {\n  display: none;\n}\n.accordion-content[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: #888888;\n  line-height: 1.6;\n}\n.faq-section[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  text-align: center;\n  margin-bottom: 1rem;\n}\n.faq-title[_ngcontent-%COMP%] {\n  color: var(--primary);\n  font-size: 2.5rem;\n  margin-bottom: 2rem;\n}\n/*# sourceMappingURL=faq.component.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FaqComponent, { className: "FaqComponent", filePath: "src/app/faq/faq.component.ts", lineNumber: 16 });
+})();
+
 // src/app/zip-text/zip-text.component.ts
 function ZipTextComponent_option_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "option", 12);
+    \u0275\u0275elementStart(0, "option", 13);
     \u0275\u0275text(1);
     \u0275\u0275elementEnd();
   }
@@ -57140,7 +57247,7 @@ function ZipTextComponent_option_8_Template(rf, ctx) {
 }
 function ZipTextComponent_app_loader_overlay_13_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "app-loader-overlay", 13);
+    \u0275\u0275element(0, "app-loader-overlay", 14);
   }
   if (rf & 2) {
     \u0275\u0275property("message", "Generating link...");
@@ -57161,10 +57268,12 @@ var ZipTextComponent = class _ZipTextComponent {
   textInput = "";
   expiryInMinutes = 10;
   loading = false;
+  faqItems = ZIP_TEXT_FAQ;
   ngOnInit() {
     this.headerService.setTitleAndDescription({
-      pageTitle: PAGE_TITLE.ZIP_TEXT,
-      pageDescription: PAGE_DESCRIPTION.ZIP_TEXT
+      pageTitle: COMPONENT_TITLE.ZIP_TEXT,
+      pageDescription: COMPONENT_DESCRIPTION.ZIP_TEXT,
+      tabTitle: TAB_TITLE.ZIP_TEXT
     });
   }
   generateLink(botGuard) {
@@ -57196,7 +57305,7 @@ var ZipTextComponent = class _ZipTextComponent {
   static \u0275fac = function ZipTextComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ZipTextComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextComponent, selectors: [["app-zip-text"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 16, vars: 7, consts: [["botGuard", ""], [1, "main-content-text"], [1, "textarea-flex-wrapper"], ["rows", "8", "placeholder", "Paste your text here...", 3, "ngModelChange", "ngModel"], [1, "button-row"], [1, "dropdown-group"], ["for", "expiry-select"], ["id", "expiry-select", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [3, "click", "disabled"], [3, "message", 4, "ngIf"], [1, "footer-note"], [3, "value"], [3, "message"]], template: function ZipTextComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipTextComponent, selectors: [["app-zip-text"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 17, vars: 8, consts: [["botGuard", ""], [1, "main-content-text"], [1, "textarea-flex-wrapper"], ["rows", "8", "placeholder", "Paste your text here...", 3, "ngModelChange", "ngModel"], [1, "button-row"], [1, "dropdown-group"], ["for", "expiry-select"], ["id", "expiry-select", 3, "ngModelChange", "ngModel"], [3, "value", 4, "ngFor", "ngForOf"], [3, "click", "disabled"], [3, "message", 4, "ngIf"], [1, "footer-note"], [3, "items"], [3, "value"], [3, "message"]], template: function ZipTextComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 1)(1, "div", 2)(2, "textarea", 3);
@@ -57231,6 +57340,7 @@ var ZipTextComponent = class _ZipTextComponent {
       \u0275\u0275elementStart(14, "p", 11);
       \u0275\u0275text(15, " Note - We encrypt every message before storing it, ensuring complete privacy. No one can access your text, and it\u2019s permanently removed once the expiry time is reached.\n");
       \u0275\u0275elementEnd();
+      \u0275\u0275element(16, "app-faq", 12);
     }
     if (rf & 2) {
       \u0275\u0275classProp("fade-out", ctx.loading);
@@ -57244,11 +57354,13 @@ var ZipTextComponent = class _ZipTextComponent {
       \u0275\u0275property("disabled", !ctx.textInput.trim());
       \u0275\u0275advance(2);
       \u0275\u0275property("ngIf", ctx.loading);
+      \u0275\u0275advance(3);
+      \u0275\u0275property("items", ctx.faqItems);
     }
-  }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, CommonModule, NgForOf, NgIf, LoaderOverlayComponent, BotGuardComponent], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n  margin-bottom: 1rem;\n}\n.main-content-text[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  color: var(--primary);\n  margin-bottom: 1rem;\n}\ntextarea[_ngcontent-%COMP%], \ninput[type=text][_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.75rem;\n  font-size: 1rem;\n  margin-bottom: 1rem;\n  background: white;\n  color: #333;\n}\nbutton[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\nbutton[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\nbutton[_ngcontent-%COMP%]:disabled {\n  background: #ccc;\n  color: #666;\n  cursor: not-allowed;\n  opacity: 0.7;\n  box-shadow: none;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.button-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  gap: 1rem;\n}\n.dropdown-group[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.dropdown-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: var(--primary);\n  white-space: nowrap;\n}\n.dropdown-group[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 0.5rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  border: 1px solid #ccc;\n  background: white;\n  color: #333;\n}\n.main-content-text[_ngcontent-%COMP%] {\n  position: relative;\n  opacity: 1;\n  transition: opacity 0.3s ease;\n}\n.main-content-text.fade-out[_ngcontent-%COMP%] {\n  opacity: 0.4;\n}\n.footer-note[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 1rem auto;\n  font-size: 14px;\n}\n/*# sourceMappingURL=zip-text.component.css.map */"] });
+  }, dependencies: [FormsModule, NgSelectOption, \u0275NgSelectMultipleOption, DefaultValueAccessor, SelectControlValueAccessor, NgControlStatus, NgModel, CommonModule, NgForOf, NgIf, LoaderOverlayComponent, BotGuardComponent, FaqComponent], styles: ["\n\n.main-content-text[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n  margin-bottom: 1rem;\n}\n.main-content-text[_ngcontent-%COMP%]   h3[_ngcontent-%COMP%] {\n  color: var(--primary);\n  margin-bottom: 1rem;\n}\ntextarea[_ngcontent-%COMP%], \ninput[type=text][_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.75rem;\n  font-size: 1rem;\n  margin-bottom: 1rem;\n  background: white;\n  color: #333;\n}\nbutton[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\nbutton[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\nbutton[_ngcontent-%COMP%]:disabled {\n  background: #ccc;\n  color: #666;\n  cursor: not-allowed;\n  opacity: 0.7;\n  box-shadow: none;\n}\n.textarea-flex-wrapper[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  width: 100%;\n}\n.button-row[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  flex-wrap: nowrap;\n  gap: 1rem;\n}\n.dropdown-group[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 0.5rem;\n  flex-shrink: 0;\n}\n.dropdown-group[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: var(--primary);\n  white-space: nowrap;\n}\n.dropdown-group[_ngcontent-%COMP%]   select[_ngcontent-%COMP%] {\n  padding: 0.5rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  border: 1px solid #ccc;\n  background: white;\n  color: #333;\n}\n.main-content-text[_ngcontent-%COMP%] {\n  position: relative;\n  opacity: 1;\n  transition: opacity 0.3s ease;\n}\n.main-content-text.fade-out[_ngcontent-%COMP%] {\n  opacity: 0.4;\n}\n.footer-note[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 1rem auto;\n  font-size: 14px;\n}\n/*# sourceMappingURL=zip-text.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextComponent, { className: "ZipTextComponent", filePath: "src/app/zip-text/zip-text.component.ts", lineNumber: 18 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextComponent, { className: "ZipTextComponent", filePath: "src/app/zip-text/zip-text.component.ts", lineNumber: 20 });
 })();
 
 // src/app/copy-url-box/copy-url-box.component.ts
@@ -58362,7 +58474,7 @@ var HeaderComponent = class _HeaderComponent {
       \u0275\u0275advance(2);
       \u0275\u0275textInterpolate1(" ", ctx.pageTitleAndDescription().pageDescription, " ");
     }
-  }, dependencies: [RouterModule, RouterLink, CommonModule, NgIf], styles: ["\n\nheader[_ngcontent-%COMP%] {\n  background: var(--banner-gradient);\n  text-align: center;\n  color: white;\n  box-shadow: 0 4px 12px var(--shadow);\n  position: relative;\n}\nheader[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 2.5rem;\n  font-weight: bold;\n}\nheader[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0.5rem auto 1rem auto;\n  font-size: 1.1rem;\n}\n.toggle-button[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 1rem;\n}\n.theme-toggle[_ngcontent-%COMP%] {\n  right: 1rem;\n}\n.home-redirect[_ngcontent-%COMP%] {\n  left: 1rem;\n}\n.theme-toggle[_ngcontent-%COMP%]   button[_ngcontent-%COMP%], \n.home-redirect[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  background: var(--card-bg);\n  border: none;\n  border-radius: 1.5rem;\n  padding: 0.3rem 0.75rem;\n  font-size: 0.75rem;\n  font-weight: 600;\n  cursor: pointer;\n  color: var(--primary);\n  box-shadow: 0 2px 5px var(--shadow);\n  transition: background 0.3s, color 0.3s;\n}\n@media screen and (max-width: 768px) {\n  header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n    font-size: 2rem;\n  }\n  .toggle-button[_ngcontent-%COMP%] {\n    top: 0.5rem;\n  }\n  .theme-toggle[_ngcontent-%COMP%] {\n    right: 0.5rem;\n  }\n  .home-redirect[_ngcontent-%COMP%] {\n    left: 0.5rem;\n  }\n}\n.yellow-sun[_ngcontent-%COMP%] {\n  color: yellow;\n}\n/*# sourceMappingURL=header.component.css.map */"] });
+  }, dependencies: [RouterModule, RouterLink, CommonModule, NgIf], styles: ["\n\nheader[_ngcontent-%COMP%] {\n  background: var(--banner-gradient);\n  text-align: center;\n  color: white;\n  box-shadow: 0 4px 12px var(--shadow);\n  position: relative;\n}\nheader[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n  margin: 0;\n  font-size: 2.5rem;\n  font-weight: bold;\n}\nheader[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0.5rem auto 1rem auto;\n  font-size: 1rem;\n}\n.toggle-button[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 1rem;\n}\n.theme-toggle[_ngcontent-%COMP%] {\n  right: 1rem;\n}\n.home-redirect[_ngcontent-%COMP%] {\n  left: 1rem;\n}\n.theme-toggle[_ngcontent-%COMP%]   button[_ngcontent-%COMP%], \n.home-redirect[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  background: var(--card-bg);\n  border: none;\n  border-radius: 1.5rem;\n  padding: 0.3rem 0.75rem;\n  font-size: 0.75rem;\n  font-weight: 600;\n  cursor: pointer;\n  color: var(--primary);\n  box-shadow: 0 2px 5px var(--shadow);\n  transition: background 0.3s, color 0.3s;\n}\n@media screen and (max-width: 768px) {\n  header[_ngcontent-%COMP%]   h1[_ngcontent-%COMP%] {\n    font-size: 2rem;\n  }\n  .toggle-button[_ngcontent-%COMP%] {\n    top: 0.5rem;\n  }\n  .theme-toggle[_ngcontent-%COMP%] {\n    right: 0.5rem;\n  }\n  .home-redirect[_ngcontent-%COMP%] {\n    left: 0.5rem;\n  }\n}\n.yellow-sun[_ngcontent-%COMP%] {\n  color: yellow;\n}\n/*# sourceMappingURL=header.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HeaderComponent, { className: "HeaderComponent", filePath: "src/app/header/header.component.ts", lineNumber: 22 });
