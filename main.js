@@ -37244,7 +37244,8 @@ var HeaderService = class _HeaderService {
     });
   }
   setCanonical(path) {
-    const canonicalUrl = `${environment.angularUrl}${path}`;
+    const normalizedPath = path === "/" ? "/" : path.endsWith("/") ? path : `${path}/`;
+    const canonicalUrl = `${environment.angularUrl}${normalizedPath}`;
     let link = document.querySelector("link[rel='canonical']");
     if (!link) {
       link = document.createElement("link");
@@ -37273,7 +37274,7 @@ var HomeComponent = class _HomeComponent {
   static \u0275fac = function HomeComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HomeComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HomeComponent, selectors: [["app-home"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 28, vars: 6, consts: [[1, "tools-container", "d-flex", "justify-content-center", "flex-wrap", "py-5", "px-3"], [1, "tool-card"], [1, "tool-icon"], ["routerLink", "/text"], ["routerLink", "/url"], ["routerLink", "/qr"]], template: function HomeComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _HomeComponent, selectors: [["app-home"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 28, vars: 6, consts: [[1, "tools-container", "d-flex", "justify-content-center", "flex-wrap", "py-5", "px-3"], [1, "tool-card"], [1, "tool-icon"], ["routerLink", "/text/"], ["routerLink", "/url/"], ["routerLink", "/qr/"]], template: function HomeComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2);
       \u0275\u0275text(3, "\u{1F4DD}");
