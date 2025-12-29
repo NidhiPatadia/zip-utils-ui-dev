@@ -37206,6 +37206,13 @@ var COMPONENT_DESCRIPTION;
   COMPONENT_DESCRIPTION2["ZIP_TEXT"] = "\u{1F4AC} ZipUtils helps you transfer text online securely without email or messaging apps. Upload text, generate a private link, and share it instantly with automatic expiry. \u{1F512}";
 })(COMPONENT_DESCRIPTION || (COMPONENT_DESCRIPTION = {}));
 
+// src/environments/environment.ts
+var environment = {
+  production: false,
+  nodeUrl: "https://dev-api.ziputils.com/graphql",
+  angularUrl: "https://dev.ziputils.com"
+};
+
 // src/app/services/header/header.service.ts
 var HeaderService = class _HeaderService {
   title;
@@ -37230,6 +37237,16 @@ var HeaderService = class _HeaderService {
       name: "description",
       content: pageTitleAndDescription.pageDescription
     });
+  }
+  setCanonical(path) {
+    const canonicalUrl = `${environment.angularUrl}${path}`;
+    let link = document.querySelector("link[rel='canonical']");
+    if (!link) {
+      link = document.createElement("link");
+      link.setAttribute("rel", "canonical");
+      document.head.appendChild(link);
+    }
+    link.setAttribute("href", canonicalUrl);
   }
   static \u0275fac = function HeaderService_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HeaderService)(\u0275\u0275inject(Title), \u0275\u0275inject(Meta));
@@ -57574,13 +57591,6 @@ var ZipTextViewerComponent = class _ZipTextViewerComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipTextViewerComponent, { className: "ZipTextViewerComponent", filePath: "src/app/zip-text/text-viewer/text-viewer.component.ts", lineNumber: 18 });
 })();
 
-// src/environments/environment.ts
-var environment = {
-  production: false,
-  nodeUrl: "https://dev-api.ziputils.com/graphql",
-  angularUrl: "https://dev.ziputils.com"
-};
-
 // src/app/zip-url/zip-url.component.ts
 function ZipUrlComponent_div_3_div_1_Template(rf, ctx) {
   if (rf & 1) {
@@ -58528,12 +58538,15 @@ var AppComponent = class _AppComponent {
   router;
   platformId = inject(PLATFORM_ID);
   commonService = inject(CommonService);
+  headerService = inject(HeaderService);
   showNotFoundPage = false;
   showLoaderOverlay = true;
   constructor(router) {
     this.router = router;
     this.changeScreenToShowLoader();
-    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe(() => {
+    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe((e) => {
+      const canonicalPath = e.urlAfterRedirects.split("?")[0];
+      this.headerService.setCanonical(canonicalPath);
       const currentRoute = this.router.routerState.snapshot.root.firstChild;
       const path = currentRoute?.routeConfig?.path;
       if (path === "**") {
@@ -58626,7 +58639,7 @@ var AppComponent = class _AppComponent {
   ], styles: ["\n\n.custom-container[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n}\n.header-container[_ngcontent-%COMP%] {\n  flex: 0 1 auto;\n  border-bottom: 1px solid #ddd;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex: 1 1 auto;\n}\n.footer-container[_ngcontent-%COMP%] {\n  flex: 0 1 auto;\n  border-top: 1px solid #737373;\n}\n/*# sourceMappingURL=app.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src/app/app.component.ts", lineNumber: 27 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(AppComponent, { className: "AppComponent", filePath: "src/app/app.component.ts", lineNumber: 28 });
 })();
 
 // src/main.ts
