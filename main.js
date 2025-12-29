@@ -57079,11 +57079,20 @@ function BotGuardComponent_input_1_Template(rf, ctx) {
   }
 }
 var BotGuardComponent = class _BotGuardComponent {
+  platformId;
   startTime = Date.now();
   userInteracted = false;
   jsEnabled = true;
+  isBrowser = false;
   honeypots = [];
+  constructor(platformId) {
+    this.platformId = platformId;
+    this.isBrowser = isPlatformBrowser2(this.platformId);
+  }
   ngOnInit() {
+    if (!this.isBrowser) {
+      return;
+    }
     this.createHoneypots();
     this.detectUserInteraction();
   }
@@ -57100,6 +57109,9 @@ var BotGuardComponent = class _BotGuardComponent {
     });
   }
   validate() {
+    if (!this.isBrowser) {
+      return { valid: true };
+    }
     const timeTaken = Date.now() - this.startTime;
     if (!this.jsEnabled) {
       return { valid: false, reason: "JS disabled" };
@@ -57118,7 +57130,7 @@ var BotGuardComponent = class _BotGuardComponent {
     return { valid: true };
   }
   static \u0275fac = function BotGuardComponent_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _BotGuardComponent)();
+    return new (__ngFactoryType__ || _BotGuardComponent)(\u0275\u0275directiveInject(PLATFORM_ID));
   };
   static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _BotGuardComponent, selectors: [["app-bot-guard"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 2, vars: 1, consts: [["aria-hidden", "true"], ["type", "text", "tabindex", "-1", "autocomplete", "off", "class", "host", 3, "name", "ngModel", "ngModelChange", 4, "ngFor", "ngForOf"], ["type", "text", "tabindex", "-1", "autocomplete", "off", 1, "host", 3, "ngModelChange", "name", "ngModel"]], template: function BotGuardComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -57133,7 +57145,7 @@ var BotGuardComponent = class _BotGuardComponent {
   }, dependencies: [FormsModule, DefaultValueAccessor, NgControlStatus, NgModel, CommonModule, NgForOf], styles: ["\n\n[_nghost-%COMP%] {\n  display: block;\n  position: absolute;\n  pointer-events: none;\n  width: 0;\n  height: 0;\n  overflow: hidden;\n}\n/*# sourceMappingURL=bot-guard.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(BotGuardComponent, { className: "BotGuardComponent", filePath: "src/app/bot-guard/bot-guard.component.ts", lineNumber: 12 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(BotGuardComponent, { className: "BotGuardComponent", filePath: "src/app/bot-guard/bot-guard.component.ts", lineNumber: 13 });
 })();
 
 // src/app/content/text-faq.content.ts
@@ -57756,10 +57768,9 @@ var ZipQrComponent = class _ZipQrComponent {
 // src/app/app.routes.ts
 var routes = [
   {
-    path: "home",
+    path: "",
     component: HomeComponent
   },
-  { path: "", redirectTo: "/home", pathMatch: "full" },
   {
     path: "text",
     component: ZipTextComponent
@@ -57779,10 +57790,6 @@ var routes = [
   {
     path: "u/:id",
     component: ZipUrlComponent
-  },
-  {
-    path: "404",
-    component: PageNotFoundComponent
   },
   {
     path: "**",
