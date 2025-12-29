@@ -37176,7 +37176,7 @@ var PAGE_TITLE;
 (function(PAGE_TITLE2) {
   PAGE_TITLE2["ZIP_UTILS"] = "Zip-Utils";
   PAGE_TITLE2["ZIP_TEXT"] = "Text Uploader";
-  PAGE_TITLE2["ZIP_URL"] = "Zip-URL";
+  PAGE_TITLE2["ZIP_URL"] = "URL Shortener";
   PAGE_TITLE2["ZIP_QR"] = "Zip-QR";
   PAGE_TITLE2["NOT_FOUND"] = "Page Not Found!";
 })(PAGE_TITLE || (PAGE_TITLE = {}));
@@ -37196,14 +37196,19 @@ var RedirectionType;
 var TAB_TITLE;
 (function(TAB_TITLE2) {
   TAB_TITLE2["ZIP_TEXT"] = "Text Transfer Online \u2013 Secure Text Uploader with Expiry | ZipUtils";
+  TAB_TITLE2["ZIP_URL"] = "URL Shortener \u2013 Create Short Links Instantly | ZipUtils";
+  TAB_TITLE2["ZIP_QR"] = "QR Code Generator \u2013 Create QR Codes for Links or Text | ZipUtils";
 })(TAB_TITLE || (TAB_TITLE = {}));
 var COMPONENT_TITLE;
 (function(COMPONENT_TITLE2) {
   COMPONENT_TITLE2["ZIP_TEXT"] = "Text Transfer Online \u2013 Secure Text Uploader";
+  COMPONENT_TITLE2["ZIP_URL"] = "URL Shortener \u2013 Create Short Links Instantly";
+  COMPONENT_TITLE2["ZIP_QR"] = "QR Code Generator \u2013 Create QR Codes for Links or Text";
 })(COMPONENT_TITLE || (COMPONENT_TITLE = {}));
 var COMPONENT_DESCRIPTION;
 (function(COMPONENT_DESCRIPTION2) {
   COMPONENT_DESCRIPTION2["ZIP_TEXT"] = "\u{1F4AC} ZipUtils helps you transfer text online securely without email or messaging apps. Upload text, generate a private link, and share it instantly with automatic expiry. \u{1F512}";
+  COMPONENT_DESCRIPTION2["ZIP_URL"] = "\u{1F517} Shorten long URLs instantly with ZipUtils. Create clean, shareable short links that are fast, reliable, and easy to use. \u26A1";
 })(COMPONENT_DESCRIPTION || (COMPONENT_DESCRIPTION = {}));
 
 // src/environments/environment.ts
@@ -57184,6 +57189,36 @@ var ZIP_TEXT_FAQ = [
     answer: "Only people with the generated private link can access your uploaded text. Once expired, the link no longer works."
   }
 ];
+var ZIP_URL_FAQ = [
+  {
+    question: "What is a URL shortener?",
+    answer: "A URL shortener converts long, complex web links into short, easy-to-share URLs. This makes links cleaner, easier to remember, and more convenient to share across messages, emails, and social media."
+  },
+  {
+    question: "Why should I use ZipUtils URL Shortener?",
+    answer: "ZipUtils provides a fast and simple way to shorten links without unnecessary steps. Our URL shortener focuses on speed, reliability, and ease of use, helping you create clean links instantly."
+  },
+  {
+    question: "Are shortened URLs safe to use?",
+    answer: "Yes. Shortened URLs created using ZipUtils simply redirect users to the original destination. Always ensure the original URL is trustworthy before sharing it publicly."
+  },
+  {
+    question: "Can I shorten any type of URL?",
+    answer: "You can shorten most valid URLs, including website links, blog posts, product pages, and social media links, as long as they follow a standard web URL format."
+  },
+  {
+    question: "Do shortened links expire?",
+    answer: "Shortened links created with ZipUtils do not expire unless explicitly configured in the future. They remain accessible as long as the service is active."
+  },
+  {
+    question: "Is the URL shortener free to use?",
+    answer: "Yes. ZipUtils URL Shortener is free to use and does not require account registration for basic link shortening."
+  },
+  {
+    question: "Can I share shortened URLs on social media?",
+    answer: "Absolutely. Shortened URLs are ideal for sharing on social media platforms, messaging apps, emails, and anywhere character limits or clean presentation matter."
+  }
+];
 
 // src/app/faq/faq.component.ts
 function FaqComponent_section_0_div_4_Template(rf, ctx) {
@@ -57608,7 +57643,7 @@ function ZipUrlComponent_div_3_div_2_Template(rf, ctx) {
 }
 function ZipUrlComponent_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 8);
+    \u0275\u0275elementStart(0, "div", 9);
     \u0275\u0275template(1, ZipUrlComponent_div_3_div_1_Template, 2, 0, "div", 6)(2, ZipUrlComponent_div_3_div_2_Template, 2, 0, "div", 6);
     \u0275\u0275elementEnd();
   }
@@ -57625,7 +57660,7 @@ function ZipUrlComponent_div_3_Template(rf, ctx) {
 function ZipUrlComponent_div_8_Template(rf, ctx) {
   if (rf & 1) {
     \u0275\u0275elementStart(0, "div");
-    \u0275\u0275element(1, "app-copy-url-box", 9);
+    \u0275\u0275element(1, "app-copy-url-box", 10);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -57636,7 +57671,7 @@ function ZipUrlComponent_div_8_Template(rf, ctx) {
 }
 function ZipUrlComponent_app_loader_overlay_9_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "app-loader-overlay", 10);
+    \u0275\u0275element(0, "app-loader-overlay", 11);
   }
   if (rf & 2) {
     \u0275\u0275property("message", "Processing...");
@@ -57652,6 +57687,7 @@ var ZipUrlComponent = class _ZipUrlComponent {
   urlForm;
   loading = false;
   id = null;
+  faqItems = ZIP_URL_FAQ;
   shortUrl = "";
   constructor(fb) {
     this.fb = fb;
@@ -57662,8 +57698,9 @@ var ZipUrlComponent = class _ZipUrlComponent {
   }
   ngOnInit() {
     this.headerService.setTitleAndDescription({
-      pageTitle: PAGE_TITLE.ZIP_URL,
-      pageDescription: PAGE_DESCRIPTION.ZIP_URL
+      pageTitle: COMPONENT_TITLE.ZIP_URL,
+      pageDescription: COMPONENT_DESCRIPTION.ZIP_URL,
+      tabTitle: TAB_TITLE.ZIP_URL
     });
   }
   onSubmit(botGuard) {
@@ -57701,7 +57738,7 @@ var ZipUrlComponent = class _ZipUrlComponent {
   static \u0275fac = function ZipUrlComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ZipUrlComponent)(\u0275\u0275directiveInject(FormBuilder));
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipUrlComponent, selectors: [["app-zip-url"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 10, vars: 5, consts: [["botGuard", ""], [1, "main-content-url"], [1, "tool-box", 3, "ngSubmit", "formGroup"], ["id", "url", "name", "url", "type", "text", "formControlName", "url", "placeholder", "Paste your long URL here...", "title", "Paste your long URL here...", 1, "form-control"], ["class", "validation-error", 4, "ngIf"], ["type", "submit", 1, "btn", "btn-primary", 3, "disabled"], [4, "ngIf"], [3, "message", 4, "ngIf"], [1, "validation-error"], [3, "shortUrl"], [3, "message"]], template: function ZipUrlComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipUrlComponent, selectors: [["app-zip-url"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 11, vars: 6, consts: [["botGuard", ""], [1, "main-content-url"], [1, "tool-box", 3, "ngSubmit", "formGroup"], ["id", "url", "name", "url", "type", "text", "formControlName", "url", "placeholder", "Paste your long URL here...", "title", "Paste your long URL here...", 1, "form-control"], ["class", "validation-error", 4, "ngIf"], ["type", "submit", 1, "btn", "btn-primary", 3, "disabled"], [4, "ngIf"], [3, "message", 4, "ngIf"], [3, "items"], [1, "validation-error"], [3, "shortUrl"], [3, "message"]], template: function ZipUrlComponent_Template(rf, ctx) {
     if (rf & 1) {
       const _r1 = \u0275\u0275getCurrentView();
       \u0275\u0275elementStart(0, "div", 1)(1, "form", 2);
@@ -57718,6 +57755,7 @@ var ZipUrlComponent = class _ZipUrlComponent {
       \u0275\u0275elementEnd()();
       \u0275\u0275template(8, ZipUrlComponent_div_8_Template, 2, 1, "div", 6)(9, ZipUrlComponent_app_loader_overlay_9_Template, 1, 1, "app-loader-overlay", 7);
       \u0275\u0275elementEnd();
+      \u0275\u0275element(10, "app-faq", 8);
     }
     if (rf & 2) {
       let tmp_2_0;
@@ -57731,6 +57769,8 @@ var ZipUrlComponent = class _ZipUrlComponent {
       \u0275\u0275property("ngIf", ctx.shortUrl);
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.loading);
+      \u0275\u0275advance();
+      \u0275\u0275property("items", ctx.faqItems);
     }
   }, dependencies: [
     CommonModule,
@@ -57744,11 +57784,12 @@ var ZipUrlComponent = class _ZipUrlComponent {
     FormControlName,
     CopyUrlBoxComponent,
     LoaderOverlayComponent,
-    BotGuardComponent
+    BotGuardComponent,
+    FaqComponent
   ], styles: ["\n\n.main-content-url[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: 3rem 1rem;\n  position: relative;\n  opacity: 1;\n  transition: opacity 0.3s ease;\n}\n.main-content-url.fade-out[_ngcontent-%COMP%] {\n  opacity: 0.4;\n}\n.tool-box[_ngcontent-%COMP%] {\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  max-width: 800px;\n  width: 100%;\n  padding: 2rem;\n  text-align: center;\n}\n.tool-box[_ngcontent-%COMP%]   input[_ngcontent-%COMP%] {\n  width: 100%;\n  padding: 1rem;\n  margin-bottom: 1rem;\n  border: 1px solid #ccc;\n  border-radius: 0.5rem;\n  font-size: 1rem;\n  background: #f0f2f5;\n  color: black;\n}\n.tool-box[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n.tool-box[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\n.loader-overlay[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  background: rgba(0, 0, 0, 0.35);\n  -webkit-backdrop-filter: blur(2px);\n  backdrop-filter: blur(2px);\n  z-index: 10;\n  animation: _ngcontent-%COMP%_fadeIn 0.2s ease-in-out;\n  color: #fff;\n  font-weight: 500;\n}\n.loader-overlay[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin: 0;\n  color: #ddd;\n  opacity: 0.9;\n  font-size: 14px;\n  font-weight: 500;\n}\n.spinner[_ngcontent-%COMP%] {\n  width: 30px;\n  height: 30px;\n  border: 3px solid #ccc;\n  border-top-color: var(--secondary);\n  border-radius: 50%;\n  animation: _ngcontent-%COMP%_spin 0.8s linear infinite;\n  margin-bottom: 8px;\n}\n@keyframes _ngcontent-%COMP%_spin {\n  to {\n    transform: rotate(360deg);\n  }\n}\n@keyframes _ngcontent-%COMP%_fadeIn {\n  from {\n    opacity: 0;\n  }\n  to {\n    opacity: 1;\n  }\n}\n/*# sourceMappingURL=zip-url.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipUrlComponent, { className: "ZipUrlComponent", filePath: "src/app/zip-url/zip-url.component.ts", lineNumber: 32 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipUrlComponent, { className: "ZipUrlComponent", filePath: "src/app/zip-url/zip-url.component.ts", lineNumber: 34 });
 })();
 
 // src/app/zip-qr/zip-qr.component.ts
