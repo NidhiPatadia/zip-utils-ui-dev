@@ -37210,6 +37210,12 @@ var COMPONENT_DESCRIPTION;
   COMPONENT_DESCRIPTION2["ZIP_TEXT"] = "\u{1F4AC} ZipUtils helps you transfer text online securely without email or messaging apps. Upload text, generate a private link, and share it instantly with automatic expiry. \u{1F512}";
   COMPONENT_DESCRIPTION2["ZIP_URL"] = "\u{1F517} Shorten long URLs instantly with ZipUtils. Create clean, shareable short links that are fast, reliable, and easy to use. \u26A1";
 })(COMPONENT_DESCRIPTION || (COMPONENT_DESCRIPTION = {}));
+var OPEN_GRAPH_TITLE;
+(function(OPEN_GRAPH_TITLE2) {
+  OPEN_GRAPH_TITLE2["ZIP_TEXT"] = "Text Uploader | ZipUtils";
+  OPEN_GRAPH_TITLE2["ZIP_URL"] = "URL Shortener | ZipUtils";
+  OPEN_GRAPH_TITLE2["ZIP_QR"] = "Zip-QR | ZipUtils";
+})(OPEN_GRAPH_TITLE || (OPEN_GRAPH_TITLE = {}));
 
 // src/environments/environment.ts
 var environment = {
@@ -57866,7 +57872,7 @@ var routes = [
     component: ZipTextComponent,
     resolve: { social: SocialMetaResolver },
     data: {
-      pageTitle: PAGE_TITLE.ZIP_TEXT,
+      pageTitle: OPEN_GRAPH_TITLE.ZIP_TEXT,
       pageDescription: PAGE_DESCRIPTION.ZIP_TEXT,
       canonical: "/text"
     }
@@ -57876,7 +57882,7 @@ var routes = [
     component: ZipUrlComponent,
     resolve: { social: SocialMetaResolver },
     data: {
-      pageTitle: PAGE_TITLE.ZIP_URL,
+      pageTitle: OPEN_GRAPH_TITLE.ZIP_URL,
       pageDescription: PAGE_DESCRIPTION.ZIP_URL,
       canonical: "/url"
     }
@@ -57886,7 +57892,7 @@ var routes = [
     component: ZipQrComponent,
     resolve: { social: SocialMetaResolver },
     data: {
-      pageTitle: PAGE_TITLE.ZIP_QR,
+      pageTitle: OPEN_GRAPH_TITLE.ZIP_QR,
       pageDescription: PAGE_DESCRIPTION.ZIP_QR,
       canonical: "/qr"
     }
