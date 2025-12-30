@@ -37242,34 +37242,6 @@ var HeaderService = class _HeaderService {
       name: "description",
       content: pageTitleAndDescription.pageDescription
     });
-    this.meta.updateTag({
-      property: "og:title",
-      content: pageTitleAndDescription.pageTitle
-    });
-    this.meta.updateTag({
-      property: "og:description",
-      content: pageTitleAndDescription.pageDescription
-    });
-    this.meta.updateTag({
-      property: "og:type",
-      content: "website"
-    });
-    this.meta.updateTag({
-      property: "og:site_name",
-      content: "Zip-Utils"
-    });
-    this.meta.updateTag({
-      name: "twitter:card",
-      content: "summary_large_image"
-    });
-    this.meta.updateTag({
-      name: "twitter:title",
-      content: pageTitleAndDescription.pageTitle
-    });
-    this.meta.updateTag({
-      name: "twitter:description",
-      content: pageTitleAndDescription.pageDescription
-    });
   }
   setCanonical(path) {
     const normalizedPath = path === "/" ? "/" : path.endsWith("/") ? path : `${path}/`;
@@ -37281,10 +37253,6 @@ var HeaderService = class _HeaderService {
       document.head.appendChild(link);
     }
     link.setAttribute("href", canonicalUrl);
-    this.meta.updateTag({
-      property: "og:url",
-      content: canonicalUrl
-    });
   }
   static \u0275fac = function HeaderService_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HeaderService)(\u0275\u0275inject(Title), \u0275\u0275inject(Meta));
@@ -57849,6 +57817,44 @@ var ZipQrComponent = class _ZipQrComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipQrComponent, { className: "ZipQrComponent", filePath: "src/app/zip-qr/zip-qr.component.ts", lineNumber: 12 });
 })();
 
+// src/app/resolvers/social-meta.resolver.ts
+var SocialMetaResolver = class _SocialMetaResolver {
+  meta;
+  constructor(meta) {
+    this.meta = meta;
+  }
+  resolve(route) {
+    const data = route.data;
+    const title = data["pageTitle"];
+    const description = data["pageDescription"];
+    const canonicalPath = data["canonical"];
+    if (title) {
+      this.meta.updateTag({ property: "og:title", content: title });
+    }
+    if (description) {
+      this.meta.updateTag({ property: "og:description", content: description });
+    }
+    this.meta.updateTag({ property: "og:type", content: "website" });
+    this.meta.updateTag({ property: "og:site_name", content: "Zip-Utils" });
+    if (canonicalPath) {
+      const url = canonicalPath === "/" ? environment.angularUrl : `${environment.angularUrl}${canonicalPath}`;
+      this.meta.updateTag({ property: "og:url", content: url });
+    }
+    this.meta.updateTag({ name: "twitter:card", content: "summary_large_image" });
+    if (title) {
+      this.meta.updateTag({ name: "twitter:title", content: title });
+    }
+    if (description) {
+      this.meta.updateTag({ name: "twitter:description", content: description });
+    }
+    return true;
+  }
+  static \u0275fac = function SocialMetaResolver_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _SocialMetaResolver)(\u0275\u0275inject(Meta));
+  };
+  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _SocialMetaResolver, factory: _SocialMetaResolver.\u0275fac, providedIn: "root" });
+};
+
 // src/app/app.routes.ts
 var routes = [
   {
@@ -57857,15 +57863,33 @@ var routes = [
   },
   {
     path: "text",
-    component: ZipTextComponent
+    component: ZipTextComponent,
+    resolve: { social: SocialMetaResolver },
+    data: {
+      pageTitle: PAGE_TITLE.ZIP_TEXT,
+      pageDescription: PAGE_DESCRIPTION.ZIP_TEXT,
+      canonical: "/text"
+    }
   },
   {
     path: "url",
-    component: ZipUrlComponent
+    component: ZipUrlComponent,
+    resolve: { social: SocialMetaResolver },
+    data: {
+      pageTitle: PAGE_TITLE.ZIP_URL,
+      pageDescription: PAGE_DESCRIPTION.ZIP_URL,
+      canonical: "/url"
+    }
   },
   {
     path: "qr",
-    component: ZipQrComponent
+    component: ZipQrComponent,
+    resolve: { social: SocialMetaResolver },
+    data: {
+      pageTitle: PAGE_TITLE.ZIP_QR,
+      pageDescription: PAGE_DESCRIPTION.ZIP_QR,
+      canonical: "/qr"
+    }
   },
   {
     path: "t/:id",
