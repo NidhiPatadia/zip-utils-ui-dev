@@ -37242,6 +37242,34 @@ var HeaderService = class _HeaderService {
       name: "description",
       content: pageTitleAndDescription.pageDescription
     });
+    this.meta.updateTag({
+      property: "og:title",
+      content: pageTitleAndDescription.pageTitle
+    });
+    this.meta.updateTag({
+      property: "og:description",
+      content: pageTitleAndDescription.pageDescription
+    });
+    this.meta.updateTag({
+      property: "og:type",
+      content: "website"
+    });
+    this.meta.updateTag({
+      property: "og:site_name",
+      content: "Zip-Utils"
+    });
+    this.meta.updateTag({
+      name: "twitter:card",
+      content: "summary_large_image"
+    });
+    this.meta.updateTag({
+      name: "twitter:title",
+      content: pageTitleAndDescription.pageTitle
+    });
+    this.meta.updateTag({
+      name: "twitter:description",
+      content: pageTitleAndDescription.pageDescription
+    });
   }
   setCanonical(path) {
     const normalizedPath = path === "/" ? "/" : path.endsWith("/") ? path : `${path}/`;
@@ -37253,6 +37281,10 @@ var HeaderService = class _HeaderService {
       document.head.appendChild(link);
     }
     link.setAttribute("href", canonicalUrl);
+    this.meta.updateTag({
+      property: "og:url",
+      content: canonicalUrl
+    });
   }
   static \u0275fac = function HeaderService_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HeaderService)(\u0275\u0275inject(Title), \u0275\u0275inject(Meta));
