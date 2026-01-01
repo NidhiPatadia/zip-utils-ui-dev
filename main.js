@@ -59337,6 +59337,10 @@ var ZIP_TEXT_FAQ = [
   {
     question: "Who can access my uploaded text?",
     answer: "Only people with the generated private link can access your uploaded text. Once expired, the link no longer works."
+  },
+  {
+    question: "Can I share links or create QR codes instead of sharing text?",
+    answer: 'Yes. If you only need to share a website link, you can use the <a href="/url/">URL Shortener</a> to create a clean, shareable link. You can also generate a <a href="/qr/">QR Code</a> for your text or links to make sharing easier on mobile or offline.'
   }
 ];
 var ZIP_URL_FAQ = [
@@ -59367,6 +59371,10 @@ var ZIP_URL_FAQ = [
   {
     question: "Can I share shortened URLs on social media?",
     answer: "Absolutely. Shortened URLs are ideal for sharing on social media platforms, messaging apps, emails, and anywhere character limits or clean presentation matter."
+  },
+  {
+    question: "Can I share text or create QR codes instead of shortening a URL?",
+    answer: 'Yes. If you need to share actual content like notes or messages, you can use the <a href="/text/">Text<a> Sharing tool to generate a private link. If you want to share links or text offline or on mobile, you can also create a <a href="/qr/">QR Code</a> for quick scanning.'
   }
 ];
 
@@ -59385,9 +59393,9 @@ function FaqComponent_section_0_div_4_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275element(4, "span", 8);
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "div", 9)(6, "p");
-    \u0275\u0275text(7);
-    \u0275\u0275elementEnd()()();
+    \u0275\u0275elementStart(5, "div", 9);
+    \u0275\u0275element(6, "p", 10);
+    \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const item_r4 = ctx.$implicit;
@@ -59401,8 +59409,8 @@ function FaqComponent_section_0_div_4_Template(rf, ctx) {
     \u0275\u0275classProp("open", ctx_r2.openIndex === i_r2);
     \u0275\u0275advance();
     \u0275\u0275classProp("hidden", ctx_r2.openIndex !== i_r2);
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(item_r4.answer);
+    \u0275\u0275advance();
+    \u0275\u0275property("innerHTML", item_r4.answer, \u0275\u0275sanitizeHtml);
   }
 }
 function FaqComponent_section_0_Template(rf, ctx) {
@@ -59411,7 +59419,7 @@ function FaqComponent_section_0_Template(rf, ctx) {
     \u0275\u0275text(2);
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(3, "div", 3);
-    \u0275\u0275template(4, FaqComponent_section_0_div_4_Template, 8, 7, "div", 4);
+    \u0275\u0275template(4, FaqComponent_section_0_div_4_Template, 7, 7, "div", 4);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -59432,7 +59440,7 @@ var FaqComponent = class _FaqComponent {
   static \u0275fac = function FaqComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FaqComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FaqComponent, selectors: [["app-faq"]], inputs: { title: "title", items: "items" }, standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 1, vars: 1, consts: [["class", "faq-section", 4, "ngIf"], [1, "faq-section"], [1, "faq-title"], [1, "accordion"], ["class", "accordion-item", 4, "ngFor", "ngForOf"], [1, "accordion-item"], [1, "accordion-header", 3, "click"], [1, "question"], ["aria-hidden", "true", 1, "arrow"], [1, "accordion-content"]], template: function FaqComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FaqComponent, selectors: [["app-faq"]], inputs: { title: "title", items: "items" }, standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 1, vars: 1, consts: [["class", "faq-section", 4, "ngIf"], [1, "faq-section"], [1, "faq-title"], [1, "accordion"], ["class", "accordion-item", 4, "ngFor", "ngForOf"], [1, "accordion-item"], [1, "accordion-header", 3, "click"], [1, "question"], ["aria-hidden", "true", 1, "arrow"], [1, "accordion-content"], [3, "innerHTML"]], template: function FaqComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275template(0, FaqComponent_section_0_Template, 5, 2, "section", 0);
     }
