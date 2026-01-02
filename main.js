@@ -87390,33 +87390,49 @@ var FooterComponent = class _FooterComponent {
   static \u0275fac = function FooterComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _FooterComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FooterComponent, selectors: [["app-footer"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 24, vars: 2, consts: [[1, "footer-box"], [1, "container", "py-3"], [1, "row"], [1, "col-12"], [1, "footer-head"], [1, "row", "mb-2"], [1, "col-3", "col-sm-4", "col-lg-3"], [1, "footer-logo-container"], ["routerLink", "/", 1, "d-inline-block", "h-100", "mw-100", "text-decoration-none"], [1, "footer-title"], [1, "col-9", "col-sm-8", "col-lg-9"], [1, "footer-links", "text-end"], [1, "legal-policy"], ["for", "legal-policy"], ["id", "legal-policy", "href", "https://drive.google.com/file/d/1Ed_Can1LipXpwhIEqy_igWL9qxn28tMQ/view", "target", "_blank", 1, "text-decoration-none", "footer-link"], [1, "contact-us"], ["for", "contact-us"], ["id", "contact-us", "href", "mailto:ziputils25@gmail.com", 1, "text-decoration-none", "footer-link"], [1, "copyright-text", "mt-3"]], template: function FooterComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _FooterComponent, selectors: [["app-footer"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 36, vars: 2, consts: [[1, "footer-box"], [1, "footer-container"], [1, "footer-section", "footer-brand"], ["routerLink", "/", 1, "footer-title"], [1, "footer-tagline"], [1, "footer-section"], [1, "footer-heading"], [1, "footer-list"], ["routerLink", "/text/"], ["routerLink", "/url/"], ["routerLink", "/qr/"], ["href", "https://drive.google.com/file/d/1Ed_Can1LipXpwhIEqy_igWL9qxn28tMQ/view", "target", "_blank", "rel", "noopener"], ["href", "mailto:ziputils25@gmail.com"], [1, "footer-bottom"]], template: function FooterComponent_Template(rf, ctx) {
     if (rf & 1) {
-      \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "div", 2)(3, "div", 3)(4, "div", 4)(5, "div", 5)(6, "div", 6)(7, "div", 7)(8, "a", 8)(9, "div", 9);
-      \u0275\u0275text(10);
-      \u0275\u0275elementEnd()()()();
-      \u0275\u0275elementStart(11, "div", 10)(12, "div", 11)(13, "div", 12);
-      \u0275\u0275element(14, "label", 13);
-      \u0275\u0275elementStart(15, "a", 14);
-      \u0275\u0275text(16, " Legal & Policy Documents ");
-      \u0275\u0275elementEnd()();
-      \u0275\u0275elementStart(17, "div", 15)(18, "label", 16);
-      \u0275\u0275text(19, "Contact Us:");
+      \u0275\u0275elementStart(0, "footer", 0)(1, "div", 1)(2, "div", 2)(3, "a", 3);
+      \u0275\u0275text(4);
       \u0275\u0275elementEnd();
-      \u0275\u0275elementStart(20, "a", 17);
-      \u0275\u0275text(21, " ziputils25@gmail.com ");
-      \u0275\u0275elementEnd()()()()()();
-      \u0275\u0275elementStart(22, "div", 18);
-      \u0275\u0275text(23);
+      \u0275\u0275elementStart(5, "p", 4);
+      \u0275\u0275text(6, " A free utility platform for text, links, and QR tools. ");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(7, "div", 5)(8, "h4", 6);
+      \u0275\u0275text(9, "Tools");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(10, "ul", 7)(11, "li")(12, "a", 8);
+      \u0275\u0275text(13, "Text Sharing");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(14, "li")(15, "a", 9);
+      \u0275\u0275text(16, "URL Shortener");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(17, "li")(18, "a", 10);
+      \u0275\u0275text(19, "QR Code Generator");
+      \u0275\u0275elementEnd()()()();
+      \u0275\u0275elementStart(20, "div", 5)(21, "h4", 6);
+      \u0275\u0275text(22, "Legal");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(23, "ul", 7)(24, "li")(25, "a", 11);
+      \u0275\u0275text(26, " Legal & Policy ");
+      \u0275\u0275elementEnd()()()();
+      \u0275\u0275elementStart(27, "div", 5)(28, "h4", 6);
+      \u0275\u0275text(29, "Contact");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(30, "ul", 7)(31, "li")(32, "a", 12);
+      \u0275\u0275text(33, " ziputils25@gmail.com ");
       \u0275\u0275elementEnd()()()()();
+      \u0275\u0275elementStart(34, "div", 13);
+      \u0275\u0275text(35);
+      \u0275\u0275elementEnd()();
     }
     if (rf & 2) {
-      \u0275\u0275advance(10);
-      \u0275\u0275textInterpolate(ctx.TITLE.ZIP_UTILS);
-      \u0275\u0275advance(13);
-      \u0275\u0275textInterpolate1(" \xA9 ", ctx.currentYear, " Zip-Utils - All rights reserved | A free utility platform for text, links, and QR tools ");
+      \u0275\u0275advance(4);
+      \u0275\u0275textInterpolate1(" ", ctx.TITLE.ZIP_UTILS, " ");
+      \u0275\u0275advance(31);
+      \u0275\u0275textInterpolate1(" \xA9 ", ctx.currentYear, " Zip-Utils \xB7 All rights reserved ");
     }
-  }, dependencies: [RouterModule, RouterLink], styles: ['\n\n.footer-box[_ngcontent-%COMP%] {\n  background-color: #222;\n}\n.footer-head[_ngcontent-%COMP%] {\n  border-bottom: 1px solid #737373;\n}\n.footer-title[_ngcontent-%COMP%] {\n  width: 150px;\n  max-width: 100%;\n  font-size: 1.8rem;\n  font-weight: bold;\n  color: white;\n}\n.social-links[_ngcontent-%COMP%] {\n  height: 100%;\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap-reverse;\n  align-items: center;\n  color: white;\n}\n.follow-us-text[_ngcontent-%COMP%] {\n  display: inline-block;\n  font-size: 13px;\n  letter-spacing: 0.22px;\n}\n.social-icon-container[_ngcontent-%COMP%] {\n  display: inline-block;\n  padding-left: 10px;\n}\n.social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n  display: inline-block;\n  list-style: none;\n  margin: 0 5px;\n  font-size: 25px;\n  cursor: pointer;\n}\n.social-icon-container[_ngcontent-%COMP%]   .fb[_ngcontent-%COMP%]:hover {\n  color: #4267b2;\n}\n.social-icon-container[_ngcontent-%COMP%]   .twitter[_ngcontent-%COMP%]:hover {\n  color: #1da1f2;\n}\n.social-icon-container[_ngcontent-%COMP%]   .insta[_ngcontent-%COMP%]:hover {\n  color: #bc2a8d;\n}\n.social-icon-container[_ngcontent-%COMP%]   .youtube[_ngcontent-%COMP%]:hover {\n  color: #ff0000;\n}\n.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%], \n.footer-links[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-family: "Roboto Regular", sans-serif;\n  font-size: 14px;\n  letter-spacing: 0.22px;\n  color: white;\n}\n.footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  color: #3f8efc;\n}\n.copyright-text[_ngcontent-%COMP%] {\n  font-family: "Roboto Regular", sans-serif;\n  font-size: 12px;\n  letter-spacing: 0.22px;\n  color: white;\n}\n@media (min-width: 768px) and (max-width: 991px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1.5rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 11px;\n    letter-spacing: 0.2px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 8px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 3px;\n    font-size: 22px;\n  }\n}\n@media (min-width: 576px) and (max-width: 767px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1.2rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 11px;\n    letter-spacing: 0.2px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 8px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 3px;\n    font-size: 22px;\n  }\n  .footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%], \n   .footer-links[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n    font-size: 11px;\n    letter-spacing: 0.2px;\n  }\n}\n@media (max-width: 575px) {\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1rem;\n  }\n  .follow-us-text[_ngcontent-%COMP%], \n   .copyright-text[_ngcontent-%COMP%] {\n    font-size: 9px;\n    letter-spacing: 0.1px;\n  }\n  .social-icon-container[_ngcontent-%COMP%] {\n    padding-left: 5px;\n  }\n  .social-icon-container[_ngcontent-%COMP%]    > li[_ngcontent-%COMP%] {\n    margin: 0 2px;\n    font-size: 16px;\n  }\n  .footer-links[_ngcontent-%COMP%]   a[_ngcontent-%COMP%], \n   .footer-links[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n    font-size: 9px;\n    letter-spacing: 0.1px;\n  }\n}\n/*# sourceMappingURL=footer.component.css.map */'] });
+  }, dependencies: [RouterModule, RouterLink], styles: ["\n\n.footer-box[_ngcontent-%COMP%] {\n  background-color: #222;\n  color: #fff;\n  padding: 2.5rem 1rem 1rem;\n}\n.footer-container[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: auto;\n  display: grid;\n  grid-template-columns: 2fr 1fr 1fr 1fr;\n  gap: 2rem;\n}\n.footer-title[_ngcontent-%COMP%] {\n  font-size: 1.8rem;\n  font-weight: bold;\n  color: white;\n  text-decoration: none;\n}\n.footer-tagline[_ngcontent-%COMP%] {\n  margin-top: 0.5rem;\n  font-size: 0.9rem;\n  color: #bbb;\n}\n.footer-heading[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  margin-bottom: 0.75rem;\n  font-weight: 600;\n}\n.footer-list[_ngcontent-%COMP%] {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n}\n.footer-list[_ngcontent-%COMP%]   li[_ngcontent-%COMP%] {\n  margin-bottom: 0.4rem;\n}\n.footer-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n  font-size: 0.9rem;\n  color: #ccc;\n  text-decoration: none;\n}\n.footer-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%]:hover {\n  color: #3f8efc;\n}\n.footer-bottom[_ngcontent-%COMP%] {\n  border-top: 1px solid #444;\n  margin-top: 2rem;\n  padding-top: 1rem;\n  text-align: center;\n  font-size: 0.75rem;\n  color: #aaa;\n}\n@media (max-width: 992px) {\n  .footer-container[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr 1fr;\n    gap: 1.5rem;\n  }\n}\n@media (max-width: 576px) {\n  .footer-container[_ngcontent-%COMP%] {\n    grid-template-columns: 1fr;\n    text-align: center;\n  }\n  .footer-section[_ngcontent-%COMP%] {\n    margin-bottom: 1.5rem;\n  }\n  .footer-title[_ngcontent-%COMP%] {\n    font-size: 1.4rem;\n  }\n  .footer-list[_ngcontent-%COMP%]   a[_ngcontent-%COMP%] {\n    font-size: 0.85rem;\n  }\n}\n/*# sourceMappingURL=footer.component.css.map */"] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(FooterComponent, { className: "FooterComponent", filePath: "src/app/footer/footer.component.ts", lineNumber: 12 });
