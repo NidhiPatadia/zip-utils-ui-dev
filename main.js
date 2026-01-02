@@ -39319,7 +39319,7 @@ var PAGE_TITLE;
   PAGE_TITLE2["ZIP_UTILS"] = "Zip-Utils";
   PAGE_TITLE2["ZIP_TEXT"] = "Text Uploader";
   PAGE_TITLE2["ZIP_URL"] = "URL Shortener";
-  PAGE_TITLE2["ZIP_QR"] = "Zip-QR";
+  PAGE_TITLE2["ZIP_QR"] = "QR Code Generator/Scanner";
   PAGE_TITLE2["NOT_FOUND"] = "Page Not Found!";
 })(PAGE_TITLE || (PAGE_TITLE = {}));
 var PAGE_DESCRIPTION;
@@ -39327,37 +39327,38 @@ var PAGE_DESCRIPTION;
   PAGE_DESCRIPTION2["ZIP_UTILS"] = "\u26A1 One place. Many tools. Simply fast.";
   PAGE_DESCRIPTION2["ZIP_TEXT"] = "\u{1F4AC} Paste and share instantly with a unique, secure link. \u{1F512}";
   PAGE_DESCRIPTION2["ZIP_URL"] = "\u{1F517} Create short, simple, and shareable links in seconds.";
-  PAGE_DESCRIPTION2["ZIP_QR"] = "\u{1F4F1} Generate QR codes for links, text, or data \u2014 in one click.";
+  PAGE_DESCRIPTION2["ZIP_QR"] = "\u{1F4F1} Generate/Scan QR codes for links, text, or data \u2014 in one click.";
   PAGE_DESCRIPTION2["NOT_FOUND"] = "The page you are looking for does not exist or may have been moved.";
 })(PAGE_DESCRIPTION || (PAGE_DESCRIPTION = {}));
 var RedirectionType;
 (function(RedirectionType2) {
   RedirectionType2["TEXT"] = "t";
   RedirectionType2["URL"] = "u";
+  RedirectionType2["QR"] = "q";
 })(RedirectionType || (RedirectionType = {}));
 var TAB_TITLE;
 (function(TAB_TITLE2) {
   TAB_TITLE2["ZIP_TEXT"] = "Text Transfer Online \u2013 Secure Text Uploader with Expiry | ZipUtils";
   TAB_TITLE2["ZIP_URL"] = "URL Shortener \u2013 Create Short Links Instantly | ZipUtils";
-  TAB_TITLE2["ZIP_QR"] = "QR Code Generator \u2013 Create QR Codes for Links or Text | ZipUtils";
+  TAB_TITLE2["ZIP_QR"] = "QR Code Generator/Scanner \u2013 Create/Scan QR Codes for Links or Text | ZipUtils";
 })(TAB_TITLE || (TAB_TITLE = {}));
 var COMPONENT_TITLE;
 (function(COMPONENT_TITLE2) {
   COMPONENT_TITLE2["ZIP_TEXT"] = "Text Transfer Online \u2013 Secure Text Uploader";
   COMPONENT_TITLE2["ZIP_URL"] = "URL Shortener \u2013 Create Short Links Instantly";
-  COMPONENT_TITLE2["ZIP_QR"] = "QR Code Generator \u2013 Create QR Codes for Links or Text";
+  COMPONENT_TITLE2["ZIP_QR"] = "QR Code Generator/Scanner \u2013 Create/Scan QR Codes for Links or Text";
 })(COMPONENT_TITLE || (COMPONENT_TITLE = {}));
 var COMPONENT_DESCRIPTION;
 (function(COMPONENT_DESCRIPTION2) {
   COMPONENT_DESCRIPTION2["ZIP_TEXT"] = "\u{1F4AC} ZipUtils helps you transfer text online securely without email or messaging apps. Upload text, generate a private link, and share it instantly with automatic expiry. \u{1F512}";
   COMPONENT_DESCRIPTION2["ZIP_URL"] = "\u{1F517} Shorten long URLs instantly with ZipUtils. Create clean, shareable short links that are fast, reliable, and easy to use. \u26A1";
-  COMPONENT_DESCRIPTION2["ZIP_QR"] = "\u{1F4F1} Generate QR codes for links, text, or data \u2014 in one click.";
+  COMPONENT_DESCRIPTION2["ZIP_QR"] = "\u{1F4F1} Generate/Scan QR codes for links, text, or data \u2014 in one click.";
 })(COMPONENT_DESCRIPTION || (COMPONENT_DESCRIPTION = {}));
 var OPEN_GRAPH_TITLE;
 (function(OPEN_GRAPH_TITLE2) {
   OPEN_GRAPH_TITLE2["ZIP_TEXT"] = "Text Uploader | ZipUtils";
   OPEN_GRAPH_TITLE2["ZIP_URL"] = "URL Shortener | ZipUtils";
-  OPEN_GRAPH_TITLE2["ZIP_QR"] = "Zip-QR | ZipUtils";
+  OPEN_GRAPH_TITLE2["ZIP_QR"] = "QR Code Generator/Scanner | ZipUtils";
 })(OPEN_GRAPH_TITLE || (OPEN_GRAPH_TITLE = {}));
 
 // src/environments/environment.ts
