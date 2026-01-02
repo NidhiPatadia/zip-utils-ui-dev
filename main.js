@@ -59377,6 +59377,52 @@ var ZIP_URL_FAQ = [
     answer: 'Yes. If you need to share actual content like notes or messages, you can use the <a href="/text/">Text<a> Sharing tool to generate a private link. If you want to share links or text offline or on mobile, you can also create a <a href="/qr/">QR Code</a> for quick scanning.'
   }
 ];
+var ZIP_QR_FAQ = [
+  {
+    question: "What is a QR code generator?",
+    answer: "A QR code generator allows you to convert text, URLs, or other small data into a scannable QR code. Users can scan the QR code using a mobile phone or camera-enabled device to quickly access the embedded information."
+  },
+  {
+    question: "What type of content can I generate a QR code for?",
+    answer: "You can generate QR codes for website URLs, plain text, short messages, and other lightweight data. QR codes work best for compact content such as links or identifiers."
+  },
+  {
+    question: "Is there a limit on how much text a QR code can store?",
+    answer: "Yes. QR codes have a size limit. For most use cases, it is recommended to keep text under 1\u20132 KB. Large content or files should be shared using a link instead of embedding the data directly in a QR code."
+  },
+  {
+    question: "Can I download the generated QR code?",
+    answer: "Yes. Once your QR code is generated, you can download it as an image file and use it in documents, posters, websites, presentations, or print materials."
+  },
+  {
+    question: "Can I share the QR code image directly?",
+    answer: "Yes. You can share the generated QR code image directly using supported devices and browsers. This makes it easy to send QR codes through messaging apps, email, or social platforms."
+  },
+  {
+    question: "Can I modify the content after generating a QR code?",
+    answer: "No. Once a QR code is generated, its content cannot be changed. To update the content, you need to create a new QR code. This ensures clarity and avoids confusion when sharing."
+  },
+  {
+    question: "How does the QR code scanner work?",
+    answer: "The QR code scanner uses your device\u2019s camera to detect and decode QR codes in real time. Simply point the camera at a QR code, and the embedded content will be displayed instantly."
+  },
+  {
+    question: "Is scanning QR codes safe?",
+    answer: "Scanning QR codes is generally safe, but you should always verify the scanned content before opening links. Avoid scanning QR codes from untrusted or suspicious sources."
+  },
+  {
+    question: "Do scanned QR codes get stored anywhere?",
+    answer: "No. Scanned QR code data is processed locally in your browser and is not stored or tracked. Your privacy is fully respected."
+  },
+  {
+    question: "Can I use QR codes for offline sharing?",
+    answer: "Yes. QR codes are ideal for offline sharing. You can print them on paper, posters, or packaging, allowing users to scan and access information without manually typing links."
+  },
+  {
+    question: "When should I use a QR code instead of text or URL sharing?",
+    answer: 'QR codes are best when you want fast access on mobile devices, offline sharing, or clean presentation. For longer content, consider using <a href="/text/">Text Sharing</a> or a <a href="/url/">URL Shortener</a> and then generate a QR code for that link.'
+  }
+];
 
 // src/app/faq/faq.component.ts
 function FaqComponent_section_0_div_4_Template(rf, ctx) {
@@ -86547,7 +86593,7 @@ var ZXingScannerModule = class _ZXingScannerModule {
 // src/app/zip-qr/zip-qr.component.ts
 function ZipQrComponent_section_6_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 10);
+    \u0275\u0275elementStart(0, "div", 12);
     \u0275\u0275text(1, " Text or URL length must be less then 300 characters! ");
     \u0275\u0275elementEnd();
   }
@@ -86555,7 +86601,7 @@ function ZipQrComponent_section_6_div_4_Template(rf, ctx) {
 function ZipQrComponent_section_6_div_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 11)(1, "span", 12);
+    \u0275\u0275elementStart(0, "div", 13)(1, "span", 14);
     \u0275\u0275listener("click", function ZipQrComponent_section_6_div_5_Template_span_click_1_listener() {
       \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -86563,8 +86609,8 @@ function ZipQrComponent_section_6_div_5_Template(rf, ctx) {
     });
     \u0275\u0275text(2, "\u2715");
     \u0275\u0275elementEnd();
-    \u0275\u0275element(3, "qrcode", 13);
-    \u0275\u0275elementStart(4, "div", 14)(5, "button", 2);
+    \u0275\u0275element(3, "qrcode", 15);
+    \u0275\u0275elementStart(4, "div", 16)(5, "button", 2);
     \u0275\u0275listener("click", function ZipQrComponent_section_6_div_5_Template_button_click_5_listener() {
       \u0275\u0275restoreView(_r3);
       const ctx_r1 = \u0275\u0275nextContext(2);
@@ -86590,7 +86636,7 @@ function ZipQrComponent_section_6_div_5_Template(rf, ctx) {
 function ZipQrComponent_section_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "section", 5)(1, "input", 6);
+    \u0275\u0275elementStart(0, "section", 7)(1, "input", 8);
     \u0275\u0275twoWayListener("ngModelChange", function ZipQrComponent_section_6_Template_input_ngModelChange_1_listener($event) {
       \u0275\u0275restoreView(_r1);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -86598,7 +86644,7 @@ function ZipQrComponent_section_6_Template(rf, ctx) {
       return \u0275\u0275resetView($event);
     });
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(2, "button", 7);
+    \u0275\u0275elementStart(2, "button", 9);
     \u0275\u0275listener("click", function ZipQrComponent_section_6_Template_button_click_2_listener() {
       \u0275\u0275restoreView(_r1);
       const ctx_r1 = \u0275\u0275nextContext();
@@ -86606,7 +86652,7 @@ function ZipQrComponent_section_6_Template(rf, ctx) {
     });
     \u0275\u0275text(3, " Generate QR ");
     \u0275\u0275elementEnd();
-    \u0275\u0275template(4, ZipQrComponent_section_6_div_4_Template, 2, 0, "div", 8)(5, ZipQrComponent_section_6_div_5_Template, 9, 2, "div", 9);
+    \u0275\u0275template(4, ZipQrComponent_section_6_div_4_Template, 2, 0, "div", 10)(5, ZipQrComponent_section_6_div_5_Template, 9, 2, "div", 11);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -86621,32 +86667,61 @@ function ZipQrComponent_section_6_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r1.generatedValue);
   }
 }
+function ZipQrComponent_section_7_div_3_span_5_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275element(1, "i", 26);
+    \u0275\u0275elementEnd();
+  }
+}
+function ZipQrComponent_section_7_div_3_span_6_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275element(1, "i", 27);
+    \u0275\u0275elementEnd();
+  }
+}
 function ZipQrComponent_section_7_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 18)(1, "label");
-    \u0275\u0275text(2, "Scanned Result");
+    const _r5 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 21)(1, "div", 22)(2, "label");
+    \u0275\u0275text(3, "Scanned Result \u{1F447}");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(3, "p");
-    \u0275\u0275text(4);
+    \u0275\u0275elementStart(4, "button", 23);
+    \u0275\u0275listener("click", function ZipQrComponent_section_7_div_3_Template_button_click_4_listener() {
+      \u0275\u0275restoreView(_r5);
+      const ctx_r1 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r1.copyText());
+    });
+    \u0275\u0275template(5, ZipQrComponent_section_7_div_3_span_5_Template, 2, 0, "span", 24)(6, ZipQrComponent_section_7_div_3_span_6_Template, 2, 0, "span", 24);
+    \u0275\u0275elementEnd()();
+    \u0275\u0275elementStart(7, "p", 25);
+    \u0275\u0275text(8);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
     const ctx_r1 = \u0275\u0275nextContext(2);
     \u0275\u0275advance(4);
+    \u0275\u0275classProp("copied", ctx_r1.textCopied);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", !ctx_r1.textCopied);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r1.textCopied);
+    \u0275\u0275advance(2);
     \u0275\u0275textInterpolate(ctx_r1.scannedResult);
   }
 }
 function ZipQrComponent_section_7_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "section", 5)(1, "div", 15)(2, "zxing-scanner", 16);
+    \u0275\u0275elementStart(0, "section", 17)(1, "div", 18)(2, "zxing-scanner", 19);
     \u0275\u0275listener("scanSuccess", function ZipQrComponent_section_7_Template_zxing_scanner_scanSuccess_2_listener($event) {
       \u0275\u0275restoreView(_r4);
       const ctx_r1 = \u0275\u0275nextContext();
       return \u0275\u0275resetView(ctx_r1.onScanSuccess($event));
     });
     \u0275\u0275elementEnd()();
-    \u0275\u0275template(3, ZipQrComponent_section_7_div_3_Template, 5, 1, "div", 17);
+    \u0275\u0275template(3, ZipQrComponent_section_7_div_3_Template, 9, 5, "div", 20);
     \u0275\u0275elementEnd();
   }
   if (rf & 2) {
@@ -86659,7 +86734,7 @@ function ZipQrComponent_section_7_Template(rf, ctx) {
 }
 function ZipQrComponent_app_loader_overlay_8_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275element(0, "app-loader-overlay", 19);
+    \u0275\u0275element(0, "app-loader-overlay", 28);
   }
   if (rf & 2) {
     \u0275\u0275property("message", "Generating link...");
@@ -86667,6 +86742,7 @@ function ZipQrComponent_app_loader_overlay_8_Template(rf, ctx) {
 }
 var ZipQrComponent = class _ZipQrComponent {
   headerService = inject(HeaderService);
+  faqItems = ZIP_QR_FAQ;
   loading = false;
   mode = "generator";
   allowedFormats = [BarcodeFormat_default.QR_CODE];
@@ -86675,6 +86751,7 @@ var ZipQrComponent = class _ZipQrComponent {
   generatedValue = null;
   // Scanner
   scannedResult = null;
+  textCopied = false;
   ngOnInit() {
     this.headerService.setTitleAndDescription({
       pageTitle: COMPONENT_TITLE.ZIP_QR,
@@ -86704,20 +86781,40 @@ var ZipQrComponent = class _ZipQrComponent {
     link.click();
   }
   shareQr() {
-    if (!navigator.share)
-      return;
-    navigator.share({
-      title: TAB_TITLE.ZIP_QR,
-      text: this.generatedValue || ""
+    return __async(this, null, function* () {
+      const canvas = document.querySelector("canvas");
+      if (!canvas || !navigator.canShare)
+        return;
+      const blob = yield new Promise((resolve) => canvas.toBlob(resolve));
+      if (!blob)
+        return;
+      const file = new File([blob], "qr-code.png", { type: "image/png" });
+      if (!navigator.canShare({ files: [file] })) {
+        alert("Sharing images is not supported on this device.");
+        return;
+      }
+      yield navigator.share({
+        title: "QR Code",
+        files: [file]
+      });
     });
   }
   onScanSuccess(result2) {
     this.scannedResult = result2;
   }
+  copyText() {
+    if (this.scannedResult) {
+      navigator.clipboard.writeText(this.scannedResult);
+      this.textCopied = true;
+      setTimeout(() => {
+        this.textCopied = false;
+      }, 2e3);
+    }
+  }
   static \u0275fac = function ZipQrComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ZipQrComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipQrComponent, selectors: [["app-zip-qr"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 9, vars: 7, consts: [[1, "qr-container"], [1, "qr-tabs"], [3, "click"], ["class", "qr-panel", 4, "ngIf"], [3, "message", 4, "ngIf"], [1, "qr-panel"], ["type", "text", "placeholder", "Enter text or URL", 3, "ngModelChange", "ngModel"], [1, "primary", "action-btn", 3, "click", "disabled"], ["class", "validation-error", 4, "ngIf"], ["class", "qr-card", 4, "ngIf"], [1, "validation-error"], [1, "qr-card"], [1, "close", 3, "click"], [3, "qrdata", "width"], [1, "qr-actions"], [1, "scanner-card"], [3, "scanSuccess", "formats"], ["class", "scan-result", 4, "ngIf"], [1, "scan-result"], [3, "message"]], template: function ZipQrComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ZipQrComponent, selectors: [["app-zip-qr"]], standalone: true, features: [\u0275\u0275StandaloneFeature], decls: 10, vars: 8, consts: [[1, "qr-container"], [1, "qr-tabs"], [3, "click"], ["class", "qr-panel qr-generator", 4, "ngIf"], ["class", "qr-panel qr-scanner", 4, "ngIf"], [3, "message", 4, "ngIf"], [3, "items"], [1, "qr-panel", "qr-generator"], ["type", "text", "placeholder", "Enter text or URL", 3, "ngModelChange", "ngModel"], [1, "primary", "action-btn", 3, "click", "disabled"], ["class", "validation-error", 4, "ngIf"], ["class", "qr-card", 4, "ngIf"], [1, "validation-error"], [1, "qr-card"], [1, "close", 3, "click"], [3, "qrdata", "width"], [1, "qr-actions"], [1, "qr-panel", "qr-scanner"], [1, "scanner-card"], [3, "scanSuccess", "formats"], ["class", "scan-result", 4, "ngIf"], [1, "scan-result"], [1, "scan-result-header"], ["title", "Copy text", 1, "copy-text-btn", 3, "click"], [4, "ngIf"], [1, "scan-result-content"], [1, "fa-solid", "fa", "fa-copy"], [1, "fa-solid", "fa", "fa-clipboard-check"], [3, "message"]], template: function ZipQrComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "button", 2);
       \u0275\u0275listener("click", function ZipQrComponent_Template_button_click_2_listener() {
@@ -86731,9 +86828,10 @@ var ZipQrComponent = class _ZipQrComponent {
       });
       \u0275\u0275text(5, " QR Scanner ");
       \u0275\u0275elementEnd()();
-      \u0275\u0275template(6, ZipQrComponent_section_6_Template, 6, 4, "section", 3)(7, ZipQrComponent_section_7_Template, 4, 2, "section", 3);
+      \u0275\u0275template(6, ZipQrComponent_section_6_Template, 6, 4, "section", 3)(7, ZipQrComponent_section_7_Template, 4, 2, "section", 4);
       \u0275\u0275elementEnd();
-      \u0275\u0275template(8, ZipQrComponent_app_loader_overlay_8_Template, 1, 1, "app-loader-overlay", 4);
+      \u0275\u0275template(8, ZipQrComponent_app_loader_overlay_8_Template, 1, 1, "app-loader-overlay", 5);
+      \u0275\u0275element(9, "app-faq", 6);
     }
     if (rf & 2) {
       \u0275\u0275advance(2);
@@ -86746,11 +86844,26 @@ var ZipQrComponent = class _ZipQrComponent {
       \u0275\u0275property("ngIf", ctx.mode === "scanner");
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.loading);
+      \u0275\u0275advance();
+      \u0275\u0275property("items", ctx.faqItems);
     }
-  }, dependencies: [FormsModule, DefaultValueAccessor, NgControlStatus, NgModel, CommonModule, NgIf, QRCodeModule, QRCodeComponent, ZXingScannerModule, ZXingScannerComponent, LoaderOverlayComponent], styles: ["\n\n.qr-container[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n  margin-bottom: 1rem;\n}\n.qr-tabs[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0.25rem;\n  margin-bottom: 1rem;\n}\n.qr-tabs[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  border-radius: 0.5rem;\n  border: none;\n  color: #666;\n  height: 2.5rem;\n  width: 45%;\n}\n.qr-tabs[_ngcontent-%COMP%]   button.active[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n}\n.qr-panel[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1.1rem;\n}\ninput[_ngcontent-%COMP%] {\n  padding: 1rem;\n  font-size: 1rem;\n  border-radius: 0.75rem;\n  border: 1px solid #ccc;\n}\n.qr-actions[_ngcontent-%COMP%]   button[_ngcontent-%COMP%], \nbutton.action-btn[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n.qr-actions[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover, \nbutton.action-btn[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\nbutton.action-btn[_ngcontent-%COMP%]:disabled {\n  background: #ccc;\n  color: #666;\n  cursor: not-allowed;\n  opacity: 0.7;\n  box-shadow: none;\n}\n.qr-actions[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  padding: 0.4rem 0.8rem;\n}\n.qr-card[_ngcontent-%COMP%] {\n  position: relative;\n  padding: 1.5rem;\n  background: #eee;\n  border-radius: 0.75rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.qr-card[_ngcontent-%COMP%]   .close[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0.75rem;\n  right: 1rem;\n  cursor: pointer;\n  font-size: 1.1rem;\n  opacity: 0.6;\n}\n.qr-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1rem;\n  margin-top: 1rem;\n}\n.scanner-card[_ngcontent-%COMP%] {\n  border-radius: 1.25rem;\n  overflow: hidden;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);\n  margin: 0 auto;\n}\nzxing-scanner[_ngcontent-%COMP%] {\n  width: 100%;\n}\n.scan-result[_ngcontent-%COMP%] {\n  margin-top: 1rem;\n  padding: 1rem;\n  background: #f5f5f5;\n  border-radius: 0.75rem;\n}\n.scan-result[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 0.85rem;\n  color: #777;\n}\n.scan-result[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  margin-top: 0.25rem;\n  word-break: break-all;\n}\n@media (max-width: 1024px) {\n  .qr-container[_ngcontent-%COMP%] {\n    max-width: 100%;\n    margin: 0.75rem;\n    padding: 1rem;\n    border-radius: 1rem;\n  }\n}\n@media (min-width: 1200px) {\n  .scanner-card[_ngcontent-%COMP%] {\n    width: 50%;\n  }\n}\n@media (min-width: 768px) {\n  .scanner-card[_ngcontent-%COMP%] {\n    width: 60%;\n  }\n}\n/*# sourceMappingURL=zip-qr.component.css.map */"] });
+  }, dependencies: [
+    FormsModule,
+    DefaultValueAccessor,
+    NgControlStatus,
+    NgModel,
+    CommonModule,
+    NgIf,
+    QRCodeModule,
+    QRCodeComponent,
+    ZXingScannerModule,
+    ZXingScannerComponent,
+    LoaderOverlayComponent,
+    FaqComponent
+  ], styles: ["\n\n.qr-container[_ngcontent-%COMP%] {\n  max-width: 1200px;\n  margin: 3rem auto;\n  padding: 2rem;\n  background: var(--card-bg);\n  border-radius: 1.5rem;\n  box-shadow: 0 6px 16px var(--shadow);\n  text-align: center;\n  margin-bottom: 1rem;\n}\n.qr-tabs[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0.25rem;\n  margin-bottom: 1rem;\n}\n.qr-tabs[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  border-radius: 0.5rem;\n  border: none;\n  color: #666;\n  height: 2.5rem;\n  width: 45%;\n}\n.qr-tabs[_ngcontent-%COMP%]   button.active[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n}\n.qr-panel[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 1.1rem;\n}\n.qr-scanner[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  flex-direction: row;\n}\ninput[_ngcontent-%COMP%] {\n  padding: 1rem;\n  font-size: 1rem;\n  border-radius: 0.75rem;\n  border: 1px solid #ccc;\n}\n.qr-actions[_ngcontent-%COMP%]   button[_ngcontent-%COMP%], \nbutton.action-btn[_ngcontent-%COMP%] {\n  background: var(--primary);\n  color: white;\n  border: none;\n  padding: 0.7rem 1.4rem;\n  font-size: 1rem;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  transition: background 0.3s;\n}\n.qr-actions[_ngcontent-%COMP%]   button[_ngcontent-%COMP%]:hover, \nbutton.action-btn[_ngcontent-%COMP%]:hover {\n  background: var(--secondary);\n}\nbutton.action-btn[_ngcontent-%COMP%]:disabled {\n  background: #ccc;\n  color: #666;\n  cursor: not-allowed;\n  opacity: 0.7;\n  box-shadow: none;\n}\n.qr-actions[_ngcontent-%COMP%]   button[_ngcontent-%COMP%] {\n  padding: 0.4rem 0.8rem;\n}\n.qr-card[_ngcontent-%COMP%] {\n  position: relative;\n  padding: 1.5rem;\n  background: #eee;\n  border-radius: 0.75rem;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);\n}\n.qr-card[_ngcontent-%COMP%]   .close[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 0.75rem;\n  right: 1rem;\n  cursor: pointer;\n  font-size: 1.1rem;\n  opacity: 0.6;\n}\n.qr-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 1rem;\n  margin-top: 1rem;\n}\nzxing-scanner[_ngcontent-%COMP%] {\n  width: 100%;\n  border-top-left-radius: 1rem;\n  border-top-right-radius: 1rem;\n  overflow: hidden;\n  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);\n  margin: 0 auto;\n}\n.scanner-card[_ngcontent-%COMP%] {\n  width: 45%;\n}\n.scan-result[_ngcontent-%COMP%] {\n  padding: 1rem;\n  background: white;\n  border-radius: 0.75rem;\n  color: #666;\n  width: 45%;\n}\n.scan-result-header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px solid #ddd;\n  padding-bottom: 0.3rem;\n}\n.scan-result-header[_ngcontent-%COMP%]   label[_ngcontent-%COMP%] {\n  font-size: 1rem;\n}\n.scan-result[_ngcontent-%COMP%]   .scan-result-content[_ngcontent-%COMP%] {\n  margin-top: 0.25rem;\n  word-break: break-all;\n  text-align: left;\n  color: #444;\n}\n.copy-text-btn[_ngcontent-%COMP%] {\n  background: none;\n  border: none;\n  cursor: pointer;\n  font-size: 1rem;\n  color: #555;\n  transition: color 0.25s ease, transform 0.2s ease;\n}\n.copy-text-btn[_ngcontent-%COMP%]:hover {\n  color: #000;\n}\n.copy-text-btn.copied[_ngcontent-%COMP%] {\n  color: #28a745;\n  transform: scale(1.1);\n}\n@media (max-width: 1024px) {\n  .qr-container[_ngcontent-%COMP%] {\n    max-width: 100%;\n    margin: 0.75rem;\n    padding: 1rem;\n    border-radius: 1rem;\n  }\n  .scanner-card[_ngcontent-%COMP%] {\n    width: 48%;\n  }\n  .scan-result[_ngcontent-%COMP%] {\n    padding: 1rem;\n    background: white;\n    border-radius: 0.75rem;\n    color: #666;\n    width: 48%;\n  }\n}\n@media (max-width: 991px) {\n  .scanner-card[_ngcontent-%COMP%] {\n    width: 48%;\n  }\n  .scan-result[_ngcontent-%COMP%] {\n    width: 48%;\n  }\n}\n@media (max-width: 575px) {\n  .qr-scanner[_ngcontent-%COMP%] {\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n  }\n  .scanner-card[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .scan-result[_ngcontent-%COMP%] {\n    width: 100%;\n  }\n  .scan-result[_ngcontent-%COMP%] {\n    border-top-left-radius: 0;\n    border-top-right-radius: 0;\n  }\n}\n/*# sourceMappingURL=zip-qr.component.css.map */"] });
 };
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipQrComponent, { className: "ZipQrComponent", filePath: "src/app/zip-qr/zip-qr.component.ts", lineNumber: 30 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ZipQrComponent, { className: "ZipQrComponent", filePath: "src/app/zip-qr/zip-qr.component.ts", lineNumber: 33 });
 })();
 
 // src/app/resolvers/social-meta.resolver.ts
