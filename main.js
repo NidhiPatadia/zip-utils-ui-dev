@@ -86726,6 +86726,7 @@ var ZipQrComponent = class _ZipQrComponent {
   faqItems = ZIP_QR_FAQ;
   loading = false;
   mode = "generator";
+  scannerPageVisited = false;
   allowedFormats = [BarcodeFormat_default.QR_CODE];
   // Generator
   inputValue = "";
@@ -86800,6 +86801,12 @@ var ZipQrComponent = class _ZipQrComponent {
       }, 2e3);
     }
   }
+  changeMode(selectedMode) {
+    if (selectedMode === "scanner") {
+      this.scannerPageVisited = true;
+    }
+    this.mode = selectedMode;
+  }
   static \u0275fac = function ZipQrComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ZipQrComponent)();
   };
@@ -86807,13 +86814,13 @@ var ZipQrComponent = class _ZipQrComponent {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "button", 2);
       \u0275\u0275listener("click", function ZipQrComponent_Template_button_click_2_listener() {
-        return ctx.mode = "generator";
+        return ctx.changeMode("generator");
       });
       \u0275\u0275text(3, " QR Generator ");
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(4, "button", 2);
       \u0275\u0275listener("click", function ZipQrComponent_Template_button_click_4_listener() {
-        return ctx.mode = "scanner";
+        return ctx.changeMode("scanner");
       });
       \u0275\u0275text(5, " QR Scanner ");
       \u0275\u0275elementEnd()();
